@@ -5,12 +5,14 @@
  */
 
 function globalInit() {
+const darkMode = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+console.log("GlobalInit darkMode", darkMode);
 // Settings
 var particleCount = 40,
   flareCount = 10,
   motion = 0.05,
   tilt = 0.05,
-  color = '#000000',
+  color = darkMode ? '#FFFFFF' : '#000000',
   particleSizeBase = 1,
   particleSizeMultiplier = 0.5,
   flareSizeBase = 100,
@@ -36,6 +38,8 @@ var particleCount = 40,
   randomMotion = true,
   noiseLength = 1000,
   noiseStrength = 1;
+
+console.log(color);
 
 var canvas = document.getElementById('stars'),
   //orbits = document.getElementById('orbits'),

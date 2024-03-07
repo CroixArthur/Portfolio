@@ -4,8 +4,9 @@ import { AppRoutingModule } from '../app-routing.module';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [AppRoutingModule],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  imports: [
+    AppRoutingModule
+  ],
+  templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {}
