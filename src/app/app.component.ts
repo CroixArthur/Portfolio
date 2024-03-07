@@ -8,15 +8,19 @@ declare function globalInit(): any;
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  darkMode = false;
+  darkMode: boolean;
+
+  constructor() {
+    this.darkMode = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
 
   onSwitchDark() {
     if (this.darkMode) {
       document.getElementsByTagName('body')[0].classList.add('dark');
-      localStorage['theme'] = 'dark'
+      localStorage.setItem('theme', 'dark');
     } else {
       document.getElementsByTagName('body')[0].classList.remove('dark');
-      localStorage['theme'] = 'light'
+      localStorage.setItem('theme', 'light');
     }
     globalInit();
   }
