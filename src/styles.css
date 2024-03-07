@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  color: gray;
+  font-weight: 700;
+  font-size: x-large;
+}
+
+h3 {
+  color: gray;
+  font-weight: 700;
+  font-size: large;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 20%;
+  box-sizing: inherit;
+  position: relative;
+  background-color: #FFFFFF99;
+}
+
+#stars {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  top: 0px;
+}

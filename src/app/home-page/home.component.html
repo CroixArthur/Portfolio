@@ -1,0 +1,37 @@
+<main class="main z-10 flex flex-col">
+  <div class="flex flex-row">
+    <img src="https://placehold.co/300x400"/>
+    <div class="divider"></div>
+    <div class="w-[30vw] flex flex-col justify-center text-center">
+      <h1>Arthur Croix</h1>
+      <h2>Développeur Full Stack Web et Mobile</h2>
+    </div>
+  </div>
+  <div class="flex gap-8 mt-8">
+    <div class="flex-1">
+      <h2 class="mb-2">Profil</h2>
+      <p>Je suis actuellement en recherche d'un CDI pour septembre 2024 dans le domaine du mobile ou web.<br/>Le poste de chef de projet m'intéresse grandement, mais je reste ouvert à tout poste de développement informatique.<br/><br/>Mes expériences professionnelles m'ont permis de m'épanouir dans l'environnement Web et mobile en tant que Full Stack. J'en ait acquis par la même occasion des compétences en communication, management et organisation.</p>
+    </div>
+    <div class="flex-1">
+      <h2 class="mb-2">Contact</h2>
+      <ul class="flex flex-col gap-2">
+        <li class="text-gray-500 flex gap-2 items-center"><ng-icon name="featherMapPin" class="!overflow-visible"></ng-icon><p>Nantes 44000, FRANCE</p></li>
+        <li class="text-gray-500 flex gap-2 items-center"><ng-icon name="featherMail" class="!overflow-visible"></ng-icon><p>arthur.croix.pro&#64;gmail.com</p></li>
+        <li class="text-gray-500 flex gap-2 items-center"><ng-icon name="featherLinkedin" class="!overflow-visible"></ng-icon><p>www.linkedin.com/in/arthur-croix</p></li>
+        <li class="text-gray-500 flex gap-2 items-center"><ng-icon name="featherPhone" class="!overflow-visible"></ng-icon><p>+33 7 68 24 84 17</p></li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex gap-8 mt-8">
+    <history-list
+      class="flex-1"
+      [title]="formations.title"
+      [contents]="formations.content"
+    ></history-list>
+    <history-list
+      class="flex-1"
+      [title]="experiences.title"
+      [contents]="experiences.content"
+    ></history-list>
+  </div>
+</main>
