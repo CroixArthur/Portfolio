@@ -29,6 +29,10 @@ main {
   position: relative;
 }
 
+a {
+  outline: none;
+}
+
 #stars {
   display: block;
   position: fixed;
@@ -36,4 +40,16 @@ main {
   height: 100%;
   z-index: -10;
   top: 0px;
+}
+
+@layer utilities {
+  .dark h2 {
+    color: rgb(34 197 94)
+  }
+  .dark h3 {
+    color: rgb(209 213 219)
+  }
+  .dark .main {
+    color: rgb(212 212 212)
+  }
 }

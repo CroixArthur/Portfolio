@@ -5,7 +5,7 @@ import { Content } from "../models/content.model";
   selector: 'history-list',
   template: `
     <div class="flex flex-col">
-      <h2 class="flex w-full mb-4 dark:text-green-500">{{title}}</h2>
+      <h2 class="flex w-full mb-4">{{title}}</h2>
       <ul class="relative">
         <li class="absolute h-full bg-gray-500 w-[3px] ml-[8px] -z-10"></li>
         <history-list-item

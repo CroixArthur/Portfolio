@@ -8,29 +8,31 @@ import { Content } from "../models/content.model";
         <div class="mr-2">
           <div class="bg-gray-500 w-[18px] h-[18px] mt-[5px] rounded-full"
             [class]="{
-              'bg-green-500': isActual()
+              'bg-green-500': isActual(),
+              'dark:bg-gray-300': !isActual()
             }"
           ></div>
         </div>
-        <div class="flex-col">
-          <div class="flex">
+        <div class="w-full">
+          <div class="flex justify-between">
             <h3 [class]="{
-              'text-green-500': isActual()
-            }">{{content.title}}</h3>
-            <p *ngIf="isActual()" class="flex ml-2 text-green-500 items-center">actuel</p>
+                '!text-green-500': isActual()
+              }"
+              >{{content.title}}<span class=" font-normal text-base">{{isActual() ? " actuel" : ""}}</span></h3>
+            <img *ngIf="content.logoPath" [src]="content.logoPath" class="max-w-14 max-h-14 object-cover"/>
           </div>
-          <div class="flex gap-1 md:gap-4 md:flex-row flex-col">
+          <div class="flex gap-1 md:gap-4 md:flex-row flex-col text-gray-500 dark:text-gray-400">
             <div class="flex gap-2 items-center">
-              <ng-icon name="featherClock" class="text-gray-500 !overflow-visible"></ng-icon>
-              <p class="text-gray-500 font-medium">{{getDates()}}</p>
+              <ng-icon name="featherClock" class="!overflow-visible"></ng-icon>
+              <p class="font-medium">{{getDates()}}</p>
             </div>
             <div class="flex gap-2 items-center">
-              <ng-icon name="featherMapPin" class="text-gray-500 !overflow-visible"></ng-icon>
-              <p class="text-gray-500 font-medium">{{content.place}}</p>
+              <ng-icon name="featherMapPin" class="!overflow-visible"></ng-icon>
+              <p class="font-medium">{{content.place}}</p>
             </div>
           </div>
           <p class="whitespace-pre-wrap">{{content.content}}</p>
-          <p *ngIf="content.competencies"><span class="text-gray-500 font-bold">Compétences:</span> {{content.competencies}}</p>
+          <p *ngIf="content.competencies" class="mt-2"><span class="text-gray-500 dark:text-gray-400 font-bold">Compétences:</span> {{content.competencies}}</p>
         </div>
       </li>
     `

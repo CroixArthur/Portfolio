@@ -16,10 +16,10 @@ export class AppComponent {
 
   onSwitchDark() {
     if (this.darkMode) {
-      document.getElementsByTagName('body')[0].classList.add('dark');
+      document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else {
-      document.getElementsByTagName('body')[0].classList.remove('dark');
+      document.documentElement.classList.remove('dark')
       localStorage.setItem('theme', 'light');
     }
     globalInit();

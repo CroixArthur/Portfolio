@@ -4,5 +4,6 @@ export type Content = {
   endDate?: Date,
   content?: String,
   competencies?: String,
-  place?: String
+  place?: String,
+  logoPath?: String
 }

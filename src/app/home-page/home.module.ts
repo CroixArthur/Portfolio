@@ -9,6 +9,7 @@ import {
   featherPhone
 } from "@ng-icons/feather-icons";
 import { CommonModule } from "@angular/common";
+import { CompetenciesComponent } from "../competencies/competencies.component";
 
 @NgModule({
   declarations: [HomeComponent],
@@ -16,6 +17,7 @@ import { CommonModule } from "@angular/common";
   imports: [
     CommonModule,
     HistoryListModule,
+    CompetenciesComponent,
     NgIconsModule.withIcons({
       featherMapPin,
       featherMail,
