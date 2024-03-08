@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
     this.compBack = [
       { name: "PHP", percentage: 95 },
       { name: "NodeJS", percentage: 80 },
+      { name: "NestJS", percentage: 80 },
       { name: "C#", percentage: 80 }
     ];
     this.compDatabases = [
@@ -59,7 +60,10 @@ export class HomeComponent implements OnInit {
       { name: "Python", percentage: 90 },
       { name: "Haskell", percentage: 90 },
       { name: "ASM", percentage: 50 },
-      { name: "Java", percentage: 80 }
+      { name: "Java", percentage: 80 },
+      { name: "Godot", percentage: 50 },
+      { name: "Unity", percentage: 50 },
+      { name: "Unreal Engine", percentage: 50 }
     ];
   }
 
@@ -130,6 +134,15 @@ export class HomeComponent implements OnInit {
         competencies: "PHP, HTML, CSS, SQL",
         place: "Nantes, France",
         logoPath: "assets/code42-logo.png"
+      },
+      {
+        title: "Soluflam - Web Designer",
+        content: "Réalisation du site internet professionnel de l'entreprise sous Wix.\nSuivi d'un cahier des charges.\nCommunication perpétuelle avec le client.",
+        startDate: new Date("11/01/2018"),
+        endDate: new Date("01/01/2019"),
+        competencies: "UI, UX",
+        place: "Angers, France",
+        logoPath: "assets/soluflam-logo.jpg"
       }
     ]
   }};

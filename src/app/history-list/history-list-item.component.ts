@@ -19,7 +19,7 @@ import { Content } from "../models/content.model";
                 '!text-green-500': isActual()
               }"
               >{{content.title}}<span class=" font-normal text-base">{{isActual() ? " actuel" : ""}}</span></h3>
-            <img *ngIf="content.logoPath" [src]="content.logoPath" class="max-w-14 max-h-14 object-cover"/>
+            <img *ngIf="content.logoPath" [src]="content.logoPath" class="max-w-14 max-h-14 object-contain"/>
           </div>
           <div class="flex gap-1 md:gap-4 md:flex-row flex-col text-gray-500 dark:text-gray-400">
             <div class="flex gap-2 items-center">
