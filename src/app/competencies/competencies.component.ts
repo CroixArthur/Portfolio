@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   template: `
     <div>
       <h3 class="text-center mb-2">{{title}}</h3>
-      <div class="flex flex-col flex-wrap h-40 gap-2">
+      <div class="flex flex-col flex-wrap sm:h-40 h-full gap-2">
         <div
           *ngFor="let competency of competencies"
           class="flex items-center w-60"

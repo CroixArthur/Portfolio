@@ -1,14 +1,14 @@
 <main class="main z-10 flex flex-col">
-  <div class="flex flex-row">
+  <div class="flex sm:flex-row flex-col">
     <img src="https://placehold.co/300x400"/>
     <div class="divider"></div>
-    <div class="w-[30vw] flex flex-col justify-center text-center">
+    <div class="sm:w-[30vw] w-[80vw] sm:mt-0 mt-8 flex flex-col justify-center text-center">
       <h1>Arthur Croix</h1>
       <h2>Développeur Full Stack Web et Mobile</h2>
       <p class="mx-16 mt-4">Ouverture d'esprit - Dynamique - Polyvalent - Curieux - Organisé - Assidu - Sens de l'écoute</p>
     </div>
   </div>
-  <div class="flex gap-8 mt-8">
+  <div class="flex gap-8 mt-8 sm:flex-row flex-col">
     <div class="flex-1">
       <h2 class="mb-2">Profil</h2>
       <p>Je suis actuellement en recherche d'un <strong>CDI</strong> pour Septembre 2024 dans le domaine du développement mobile ou web.<br/>Le poste de chef de projet m'intéresse grandement, mais je reste ouvert à tout poste de développement informatique.<br/><br/>Mes expériences professionnelles m'ont permis de m'épanouir dans l'environnement Web et mobile en tant que Full Stack. J'en ait acquis par la même occasion des compétences en communication, management et organisation.</p>
@@ -23,7 +23,7 @@
       </ul>
     </div>
   </div>
-  <div class="flex gap-8 mt-8">
+  <div class="flex gap-8 mt-8 sm:flex-row flex-col">
     <history-list
       class="flex-1"
       [title]="formations.title"
@@ -36,7 +36,7 @@
     ></history-list>
   </div>
   <h2 class="m-4">Compétences informatiques</h2>
-  <div class="flex gap-16 flex-wrap justify-center">
+  <div class="flex sm:gap-16 gap-8 flex-wrap justify-center">
     <competencies
       title="Front End Web"
       [competencies]="compFrontWeb"

@@ -24,7 +24,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 20%;
+  padding: 1rem 10%;
   box-sizing: inherit;
   position: relative;
 }
@@ -51,5 +51,11 @@ a {
   }
   .dark .main {
     color: rgb(212 212 212)
+  }
+}
+
+@media screen(sm) {
+  main {
+    padding: 1rem 20%;
   }
 }
