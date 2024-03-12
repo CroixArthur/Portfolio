@@ -58,4 +58,11 @@
       [competencies]="compOthers"
     ></competencies>
   </div>
+  <h2 class="m-4">Recommendations</h2>
+  <div class="grid sm:grid-cols-2 grid-cols-1 gap-4 w-full">
+    <recommendation
+      *ngFor="let recommendation of recommendations"
+      [recommendation]="recommendation"
+    ></recommendation>
+  </div>
 </main>
