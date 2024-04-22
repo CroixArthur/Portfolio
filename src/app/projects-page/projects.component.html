@@ -1,3 +1,83 @@
-<main class="main">
-  <input placeholder="Recherche"/>
+<main class="main flex-col px-[10%]">
+  <div [ngClass]="{
+    'rounded-lg w-full [transition:height_1s,width_1s,border_radius_100ms_100ms]': isHelpSelected,
+    '!rounded-full w-[33px] [transition:height_1s,width_1s,border-radius_100ms_900ms]': !isHelpSelected,
+    }"
+    class="rounded-full self-start dark:bg-gray-700 bg-gray-200 p-1 transition-[height,width] duration-1000"
+    [style]="getHelpContainerStyle()"
+    >
+    <div class="flex gap-2 w-full">
+      <ng-icon
+        size="25"
+        [name]="isHelpSelected ? 'featherXCircle' : 'featherHelpCircle'"
+        [ngClass]="{
+          'rotate-90': isHelpSelected,
+          'rotate-0': !isHelpSelected
+        }"
+        class="!overflow-visible cursor-pointer active:text-green-500 transition-all"
+        (click)="onToggleHelp()" title="Plus d'informations"></ng-icon>
+      <p [ngClass]="{
+        'opacity-100 transition-opacity ': isHelpSelected,
+        'opacity-0': !isHelpSelected
+      }" class="p-2 h-auto transition-none delay-1000" id="pageDetails">J'ai pris parti de vous fournir une liste non exhaustive de plusieurs projets sur lesquels j'ai pu travailler afin de vous faire part de mes <strong>expériences</strong> ainsi que de mon <strong>expertise</strong> en programmation et gestion de projet.<br/>
+        J'ai appris en <a routerLink="/projects" fragment="firstyear" class="hover:text-green-500 font-bold cursor-pointer">première année</a> d'études à bien <strong>structurer</strong> mon code, à le <strong>documenter</strong> ainsi qu'à le <strong>tester</strong> sur l'une des technologies les plus élémentaires qu'est le langage C.<br/>
+        En <a class="hover:text-green-500 font-bold cursor-pointer">seconde année</a>, j'ai eu l'occasion de me concentrer sur les langages objets, et plus particulièrement le C++. Dans cet objectif, les projets visés étaient plus conséquents, et nécessitaient donc de plus grand groupes avec une bonne <strong>organisation</strong>.<br/>
+        La <a class="hover:text-green-500 font-bold cursor-pointer">troisième année</a> m'a permis de me <strong>diversifier</strong> dans mes compétences. Notamment dans le développement d'applications mobiles, de cybersécurité, et de DevOps.
+      </p>
+    </div>
+  </div>
+  <h2 class="mb-6 mt-2 w-full">Veuillez sélectionner les boutons ci-dessous pour filter les projets par compétences</h2>
+  <div class="flex items-start sm:flex-row flex-col-reverse">
+    <div class="flex gap-4 flex-wrap mb-8">
+      <button
+        *ngFor="let but of buttons"
+        (click)="onButtonClicked($event, but)"
+        [ngClass]="{
+          'bg-green-500 text-white': but.selected
+        }"
+        class="text-nowrap py-1 px-2 rounded border border-green-500"
+      >{{but.name}}</button>
+    </div>
+    <button
+      [ngClass]="{
+        'text-green-600 cursor-pointer': hasSelections(),
+        'text-gray-400 cursor-default': !hasSelections()
+      }"
+      class="text-nowrap ml-8"
+      (click)="clearSelections()"
+    >Effacer la sélection</button>
+  </div>
+  <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center">
+    <project-card
+      *ngFor="let project of getFilteredProjects()"
+      [project]="project"
+      [selectedTechnos]="selected"
+    ></project-card>
+  </div>
+  <div *ngIf="selected.length === 0">
+    <h2 class="py-8" id="thirdyear">Epitech 3ème année</h2>
+    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center">
+      <project-card
+        *ngFor="let project of getThirdYearProjects()"
+        [project]="project"
+        [selectedTechnos]="selected"
+      ></project-card>
+    </div>
+    <h2 class="py-8" id="secondyear">Epitech 2ème année</h2>
+    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center">
+      <project-card
+        *ngFor="let project of getSecondYearProjects()"
+        [project]="project"
+        [selectedTechnos]="selected"
+      ></project-card>
+    </div>
+    <h2 class="py-8" id="firstyear">Epitech 1ère année</h2>
+    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center">
+      <project-card
+        *ngFor="let project of getFirstYearProjects()"
+        [project]="project"
+        [selectedTechnos]="selected"
+      ></project-card>
+    </div>
+  </div>
 </main>

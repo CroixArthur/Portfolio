@@ -60,13 +60,15 @@ export class HomeComponent implements OnInit {
     this.compOthers = [
       { name: "C", percentage: 95 },
       { name: "C++", percentage: 95 },
+      { name: "Rust", percentage: 65 },
       { name: "Python", percentage: 90 },
       { name: "Haskell", percentage: 90 },
+      { name: "F#", percentage: 50 },
       { name: "ASM", percentage: 50 },
       { name: "Java", percentage: 80 },
       { name: "Godot", percentage: 50 },
       { name: "Unity", percentage: 50 },
-      { name: "Unreal Engine", percentage: 50 }
+      { name: "Unreal Engine", percentage: 50 },
     ];
   }
 
@@ -105,9 +107,9 @@ export class HomeComponent implements OnInit {
     content: [
       {
         title: "EPITECH - Teaching & Coaching",
-        content: "Assistant pédagogique auprès des élèves des branches MSC d'Epitech.",
+        content: "Assistant pédagogique auprès des élèves des branches préMSC, MSC1 et MSC2 d'Epitech Nantes.\nMontée en compétences sur de nouvelles technologies pour répondre aux questions des étudiants.",
         startDate: new Date("03/01/2024"),
-        competencies: "Pédagogie, Angular",
+        competencies: "Pédagogie, Angular, Rust, F#",
         place: "Nantes, France",
         logoPath: "assets/epitech-logo.png"
       },
@@ -155,6 +157,6 @@ export class HomeComponent implements OnInit {
   ]};
 
   ngOnInit(): void {
-    globalInit(); // For canvas
+    globalInit(); // For background canvas
   }
 }
