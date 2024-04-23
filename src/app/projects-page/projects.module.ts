@@ -5,7 +5,8 @@ import { CommonModule } from "@angular/common";
 import { ProjectCardComponent } from "./project-card.component";
 import {
   featherHelpCircle,
-  featherXCircle
+  featherXCircle,
+  featherChevronUp
 } from "@ng-icons/feather-icons";
 import { NgIconsModule } from "@ng-icons/core";
 
@@ -20,7 +21,8 @@ import { NgIconsModule } from "@ng-icons/core";
     CommonModule,
     NgIconsModule.withIcons({
       featherXCircle,
-      featherHelpCircle
+      featherHelpCircle,
+      featherChevronUp
     })
   ]
 })

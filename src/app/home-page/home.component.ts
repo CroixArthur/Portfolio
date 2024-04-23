@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
       { name: "Typescript", percentage: 95 },
       { name: "VueJS", percentage: 95 },
       { name: "ReactJS", percentage: 80 },
-      { name: "Angular", percentage: 30 }
+      { name: "Angular", percentage: 60 }
     ];
     this.compFrontMobile = [
       { name: "Dart (Flutter)", percentage: 95 },
@@ -80,13 +80,13 @@ export class HomeComponent implements OnInit {
         content: "Echange universitaire dans le cadre de ma 4ème année d'études chez Epitech.\nCours d'IA (Réseaux neuronaux, algorithmes de Reinforcement Learning, Machine Learning), cours de Java, création de modules pour le système d'exploitation xv6.",
         startDate: new Date("09/01/2022"),
         endDate: new Date("06/01/2023"),
-        competencies: "Machine Learning, Java, C",
+        competencies: "Machine Learning, Java, C, Python",
         place: "Sejong, Corée du Sud",
         logoPath: "assets/kusc-logo.png"
       },
       {
         title: "(Master) EPITECH Technology",
-        content: "Apprentissage en programmation sur de l'algorithmie, de l'intelligence artificielle, de la cybersécurité, du réseau, du jeu vidéo.\nFormation sur la prise en charge de projets informatiques, et projets de groupe.",
+        content: "Apprentissage en programmation sur de l'algorithmie, de l'intelligence artificielle, de la cybersécurité, du réseau, du jeu vidéo.\nFormation sur la prise en charge de projets informatiques, et de projets de groupe.",
         startDate: new Date("09/01/2019"),
         competencies: "C, C++, C#, Javascript (VueJs, ReactJs, React Native), Python, Haskell, Java, Dart (Flutter), ASM, SQL, Docker, PHP, HTML, CSS, Gestion de projet",
         place: "Nantes, France",
@@ -115,7 +115,7 @@ export class HomeComponent implements OnInit {
       },
       {
         title: "DIVOLUCI - Développeur Mobile Full-Stack",
-        content: "Développement de l'application mobile pour patients. Prise de rendez vous, communication avec un professionnel de santé, gestion de multiples utilisateurs, communication avec une api.\nDéveloppement de l'API pour l'application mobile.\nOrganisation et architecture du projet.",
+        content: "Développement de l'application mobile pour les patients. Prise de rendez vous, communication avec un professionnel de santé, gestion d'utilisateurs multiples, communication avec une api.\nDéveloppement de l'API pour l'application mobile.\nOrganisation et architecture du projet.",
         startDate: new Date("09/01/2023"),
         endDate: new Date("04/01/2023"),
         competencies: "PHP, MySQL, HTML5, Javascript, CSS, Symfony 5, VueJs, Docker, Dart (Flutter), Gestion de projet",
@@ -124,7 +124,7 @@ export class HomeComponent implements OnInit {
       },
       {
         title: "DIVOLUCI - Développeur Web Full-Stack",
-        content: "Développement de nouvelles fonctionnalités et implémentation de connecteurs et composants de communication avec des systèmes tiers (DMP, INSi, ProSanté Connect, etc.)",
+        content: "Développement de nouvelles fonctionnalités et implémentation de connecteurs et composants de communication avec des systèmes tiers pour l'application web (DMP, INSi, ProSanté Connect, etc.)",
         startDate: new Date("04/01/2022"),
         endDate: new Date("07/01/2022"),
         competencies: "PHP, MySQL, HTML5, Javascript, CSS, Symfony 5, VueJs, Docker",
@@ -133,7 +133,7 @@ export class HomeComponent implements OnInit {
       },
       {
         title: "Code 42 - Développeur Web Full-Stack",
-        content: "Développement autour de l'ERP (Planificateur de ressources d'entreprise) open source DOLIBARR.\nDéveloppement de nouvelles fonctionnalités pour l'ERP de plusieurs entreprises clientes.",
+        content: "Développement autour de l'ERP (Planificateur de ressources d'entreprise) open source DOLIBARR.\nDéveloppement de nouveaux modules pour l'ERP de plusieurs entreprises clientes.",
         startDate: new Date("09/01/2020"),
         endDate: new Date("12/01/2020"),
         competencies: "PHP, HTML, CSS, SQL",

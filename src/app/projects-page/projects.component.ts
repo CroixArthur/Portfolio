@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Signal, computed, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { Project } from '../models/project.model';
+import { ViewportScroller } from '@angular/common';
 
 type Button = {
   name: String,
@@ -17,14 +18,16 @@ export class ProjectsComponent implements OnDestroy, OnInit {
   selected: String[] = [];
   projects: Project[] = [];
   containerHeight = signal(0);
+  displayScrollUp = signal(false);
 
-  constructor() {
+  constructor(private viewportScroller: ViewportScroller) {
     this.projects = this.getProjects()
       .concat(this.getThirdYearProjects())
       .concat(this.getSecondYearProjects())
       .concat(this.getFirstYearProjects());
     this.getButtons();
-    window.addEventListener("resize", this.onWindowResized)
+    window.addEventListener("resize", this.onWindowResized);
+    window.addEventListener("scroll", this.shouldDisplayScrollUp);
   }
 
   ngOnDestroy(): void {
@@ -63,6 +66,14 @@ export class ProjectsComponent implements OnDestroy, OnInit {
     button.selected = !button.selected;
   }
 
+  shouldDisplayScrollUp = () => window.scrollY > 200
+    ? this.displayScrollUp() == false ? this.displayScrollUp.set(true) : {}
+    : this.displayScrollUp() == true ? this.displayScrollUp.set(false) : {};
+  
+  scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" })
+
+  scrollToAnchor = (id: string) => this.viewportScroller.scrollToAnchor(id);
+
   getFilteredProjects = () => this.selected.length === 0
     ? this.projects.filter(project => project.context !== "Epitech 1ère année"
                                         && project.context !== "Epitech 2ème année"
@@ -89,7 +100,7 @@ export class ProjectsComponent implements OnDestroy, OnInit {
     {
       name: "Portfolio",
       content: "Réalisation de mon portfolio en Angular pour découvrir la technologie.",
-      techs: ["Javascript", "Angular", "HTML", "CSS"],
+      techs: ["Javascript", "Angular", "Typescript", "HTML", "CSS"],
       goal: "Découverte d'Angular"
     },
     {
@@ -148,7 +159,7 @@ export class ProjectsComponent implements OnDestroy, OnInit {
   getSecondYearProjects = () : Project[] => [
     {
       name: "FaiRefund",
-      content: "Création d'une application mobile sur le concept de Tricount.\nPlutôt que de lier des paiements sur un groupe de personnes, celui-ci se fait de manière individuelle pour chaque personne.\nProjet réalisé dans le cadre des projets HUB d'Epitech Nantes.",
+      content: "Création d'une application mobile sur le concept de Tricount.\nPlutôt que de lier des paiements sur un groupe de personnes, ceux-ci se font de manière individuelle.\nProjet réalisé dans le cadre des projets HUB d'Epitech Nantes.",
       techs: ["React Native", "Javascript", "Firebase"],
       context: "Epitech 2ème année",
       goal: "Découverte du langage React Native, découverte de Firebase, montée en compétences sur le développement mobile"
@@ -162,28 +173,28 @@ export class ProjectsComponent implements OnDestroy, OnInit {
     },
     {
       name: "The plazza",
-      content: "Création d'un cuisine virtuelle avec gestion des stocks, définition des différents types de pizza, et timer pour chaque commande.",
+      content: "Création d'un cuisine virtuelle avec gestion des stocks, définition des différents types de pizza, et minuteur pour chaque commande.",
       techs: ["C++"],
       context: "Epitech 2ème année",
       goal: "Découvrir les mutex et la communication inter-processus (IPC)."
     },
     {
       name: "Image Compressor",
-      content: "Compresseur d'images réalisé en Haskell dans le cadre de ma 3ème année d'études chez Epitech.",
+      content: "Compresseur d'images réalisé en Haskell.",
       techs: ["Haskell"],
       context: "Epitech 2ème année",
       goal: "Comprendre comment fonctionne la compression d'image, et la réaliser."
     },
     {
       name: "Arcade",
-      content: "Création d'une borne d'arcade virtuelle, permettant de jouer à 2 jeux au choix.\nLe but de ce projet était de pouvoir encapsuler chaque élément pour offrir une expérience via la librairie SDL2, Ncurses ou SFML.\nUne autre spécificité obligeait nos jeux à être utilisables sur la librairie graphique d'autres étudiants.",
+      content: "Création d'une borne d'arcade virtuelle permettant de jouer à 2 jeux au choix.\nLe but de ce projet était de parvenir à encapsuler chaque jeu afin de pouvoir jouer sur les librairies graphiques SDL2, Ncurses, SFML, ou autre.",
       techs: ["C++"],
       context: "Epitech 2ème année",
       goal: "Rendre une modularisation générique. Communiquer entre les groupes pour offrir un code réutilisable entre chaque projet."
     },
     {
       name: "Wolfram",
-      content: "Réalisation de l'automate cellulaire élémentaire de Wolfram en Haskell.\n Impémentation des règles 30, 90 et 110.\nProjet Epitech de 3ème année.",
+      content: "Réalisation de l'automate cellulaire élémentaire de Wolfram en Haskell.\nImpémentation des règles 30, 90 et 110.",
       techs: ["Haskell"],
       context: "Epitech 2ème année",
       goal: "Faire travailler son algorithmie en Haskell"
@@ -207,7 +218,7 @@ export class ProjectsComponent implements OnDestroy, OnInit {
       content: "Reproduction de plusieurs fonctions basiques de la librairie C en Assembler",
       techs: ["ASM"],
       context: "Epitech 2ème année",
-      goal: "Apprendre à développer en langage assembler x86-64. Comprendre comment il gère la mémoire, pourquoi est il utile."
+      goal: "Apprendre à développer en langage assembler x86-64. Comprendre comment il gère la mémoire, et en quoi est t'il utile."
     },
     {
       name: "malloc",
