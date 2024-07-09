@@ -1,7 +1,7 @@
 <nav class="w-full h-20 bg-gray-100 dark:bg-gray-800 dark:text-neutral-100 flex items-center">
   <div class="flex-1"></div>
   <ul class="flex flex-[5] justify-center sm:gap-16 gap-8 text-gray-500 dark:text-gray-300">
-    <li><a class="text-xl font-bold" routerLinkActive="text-green-500" routerLink="/home">Menu</a></li>
+    <li><a class="text-xl font-bold" routerLinkActive="text-green-500" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">Menu</a></li>
     <li><a class="text-xl font-bold" routerLinkActive="text-green-500" routerLink="/projects">Projets</a></li>
   </ul>
   <div class="flex-1 sm:mr-0 mr-4">
