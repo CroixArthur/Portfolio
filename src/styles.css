@@ -11,7 +11,7 @@ h1 {
 }
 
 h2 {
-  color: gray;
+  color: #16A34A;
   font-weight: 700;
   font-size: x-large;
 }
@@ -46,9 +46,30 @@ a {
   top: 0px;
 }
 
+.growing-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.growing-underline::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+}
+
+.growing-underline:hover::before {
+  transform: scaleX(1);
+}
+
 @layer utilities {
   .dark h2 {
-    color: rgb(34 197 94)
+    color: #22C55E
   }
   .dark h3 {
     color: rgb(209 213 219)

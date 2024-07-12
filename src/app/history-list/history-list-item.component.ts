@@ -8,7 +8,8 @@ import { Content } from "../models/content.model";
         <div class="mr-2">
           <div class="bg-gray-500 w-[18px] h-[18px] mt-[5px] rounded-full"
             [class]="{
-              'bg-green-500': isActual(),
+              'bg-green': isActual(),
+              'dark:bg-green-dark': isActual(),
               'dark:bg-gray-300': !isActual()
             }"
           ></div>
@@ -16,7 +17,8 @@ import { Content } from "../models/content.model";
         <div class="w-full">
           <div class="flex justify-between">
             <h3 [class]="{
-                '!text-green-500': isActual()
+                '!text-green': isActual(),
+                'dark:!text-green-dark': isActual()
               }"
               >{{content.title}}<span class=" font-normal text-base">{{isActual() ? " actuel" : ""}}</span></h3>
             <img *ngIf="content.logoPath" [src]="content.logoPath" class="max-w-14 max-h-14 object-contain"/>

@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   compBack: Competency[];
   compDatabases: Competency[];
   compOthers: Competency[];
+  compPro: String[];
 
   constructor() {
     this.formations = this.getFormations();
@@ -69,7 +70,9 @@ export class HomeComponent implements OnInit {
       { name: "Godot", percentage: 50 },
       { name: "Unity", percentage: 50 },
       { name: "Unreal Engine", percentage: 50 },
+      { name: "Docker", percentage: 80 },
     ];
+    this.compPro = ["Pédagogie", "Force de proposition", "Méthode Agile", ""]
   }
 
   getFormations = () : ListContent => { return {
@@ -82,7 +85,6 @@ export class HomeComponent implements OnInit {
         endDate: new Date("06/01/2023"),
         competencies: "Machine Learning, Java, C, Python",
         place: "Sejong, Corée du Sud",
-        logoPath: "assets/kusc-logo.png"
       },
       {
         title: "(Master) EPITECH Technology",
@@ -90,7 +92,6 @@ export class HomeComponent implements OnInit {
         startDate: new Date("09/01/2019"),
         competencies: "C, C++, C#, Javascript (VueJs, ReactJs, React Native), Python, Haskell, Java, Dart (Flutter), ASM, SQL, Docker, PHP, HTML, CSS, Gestion de projet",
         place: "Nantes, France",
-        logoPath: "assets/epitech-logo.png"
       },
       {
         title: "Baccalauréat Scientifique Sciences de l'Ingénieur",
@@ -111,7 +112,6 @@ export class HomeComponent implements OnInit {
         startDate: new Date("03/01/2024"),
         competencies: "Pédagogie, Angular, Rust, F#",
         place: "Nantes, France",
-        logoPath: "assets/epitech-logo.png"
       },
       {
         title: "DIVOLUCI - Développeur Mobile Full-Stack",
@@ -120,7 +120,6 @@ export class HomeComponent implements OnInit {
         endDate: new Date("04/01/2023"),
         competencies: "PHP, MySQL, HTML5, Javascript, CSS, Symfony 5, VueJs, Docker, Dart (Flutter), Gestion de projet",
         place: "Nantes, France",
-        logoPath: "assets/divoluci-logo.png"
       },
       {
         title: "DIVOLUCI - Développeur Web Full-Stack",
@@ -129,7 +128,6 @@ export class HomeComponent implements OnInit {
         endDate: new Date("07/01/2022"),
         competencies: "PHP, MySQL, HTML5, Javascript, CSS, Symfony 5, VueJs, Docker",
         place: "Nantes, France",
-        logoPath: "assets/divoluci-logo.png"
       },
       {
         title: "Code 42 - Développeur Web Full-Stack",
@@ -138,7 +136,6 @@ export class HomeComponent implements OnInit {
         endDate: new Date("12/01/2020"),
         competencies: "PHP, HTML, CSS, SQL",
         place: "Nantes, France",
-        logoPath: "assets/code42-logo.png"
       },
       {
         title: "Soluflam - Web Designer",
@@ -147,7 +144,6 @@ export class HomeComponent implements OnInit {
         endDate: new Date("01/01/2019"),
         competencies: "UI, UX",
         place: "Angers, France",
-        logoPath: "assets/soluflam-logo.jpg"
       }
     ]
   }};
