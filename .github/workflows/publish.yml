@@ -9,18 +9,19 @@ jobs:
     steps:
       - name: git-checkout
         uses: actions/checkout@v2
+
+      - name: Adding Node.js
+        uses: actions/setup-node@v2
       
       - name: Install all dependencies
         run: npm install
       
       - name: Build
-        run: make build
+        run: npm run build
       
-      - name: Push
-        uses: s0/git-publish-subdir-action@develop
+      - name: Deploy to gh pages
+        run: |
+          npx angular-cli-ghpages --dir=dist/Portfolio
         env:
-          REPO: self
-          BRANCH: gh-pages
-          FOLDER: docs
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: "Build: {{sha}} {msg}"
+          CI: true
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
