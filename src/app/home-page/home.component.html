@@ -1,19 +1,19 @@
-<main class="main z-10 flex flex-col">
+<main class="main z-10 flex flex-col pt-32">
   <div class="flex sm:flex-row flex-col items-center">
     <div class="sm:h-80 sm:w-80 h-48 w-48 rounded-full overflow-hidden relative">
       <!-- <img src="https://placehold.co/300x400"/> -->
       <img src="assets/photo_pro.jpg" class="w-auto -mt-[20%]"/>
     </div>
-    <div class="sm:w-[30vw] w-[80vw] sm:mt-0 mt-8 flex flex-col justify-center text-center">
+    <div class="sm:w-[30vw] w-[80vw] sm:mt-0 mt-8 sm:ml-8 md:ml-4 flex flex-col justify-center text-center">
       <h1>Arthur Croix</h1>
-      <h2>Développeur Full Stack Web et Mobile</h2>
+      <h2>Développeur Full Stack</h2>
       <p class="mx-16 mt-4">Ouverture d'esprit - Dynamique - Polyvalent - Curieux - Organisé - Assidu - Sens de l'écoute</p>
     </div>
   </div>
   <div class="flex gap-8 mt-8 sm:flex-row flex-col">
     <div class="flex-1">
       <h2 class="mb-2">Profil</h2>
-      <p class="text-lg">Je suis actuellement en recherche d'un <strong>CDI</strong> pour Septembre 2024 dans le domaine du développement mobile, web ou desktop.<br/>Le poste de chef de projet m'intéresse grandement, mais je reste ouvert à tout poste de développement informatique.<br/><br/>Mes expériences professionnelles m'ont permis de m'épanouir dans l'environnement Web et Mobile en tant que Full Stack. J'en ait acquis par la même occasion des compétences en communication, management et organisation.</p>
+      <p class="text-lg">Je suis actuellement en recherche d'un <strong>CDD ou CDI</strong> pour Septembre 2024 dans le domaine du développement mobile, web ou desktop.<br/>Le poste de chef de projet m'intéresse grandement, mais je reste ouvert à tout poste de développement informatique.<br/><br/>Mes expériences professionnelles m'ont permis de m'épanouir dans l'environnement Web et Mobile en tant que Full Stack. J'en ait acquis par la même occasion des compétences en communication, management et organisation.</p>
     </div>
     <div class="flex-1">
       <h2 class="mb-2">Contact</h2>
@@ -37,7 +37,7 @@
       [contents]="experiences.content"
     ></history-list>
   </div>
-  <h2 class="m-4">Compétences informatiques</h2>
+  <h2 class="m-10">Compétences informatiques</h2>
   <div class="flex sm:gap-16 gap-8 flex-wrap justify-center">
     <competencies
       title="Front End Web"
@@ -60,7 +60,11 @@
       [competencies]="compOthers"
     ></competencies>
   </div>
-  <h2 class="m-4">Recommendations</h2>
+  <h2 class="m-10">Autres compétences</h2>
+  <ul class="flex sm:gap-16 gap-8 flex-wrap justify-center">
+    <li><h3 *ngFor="let competency of compPro">{{ competency }}</h3></li>
+  </ul>
+  <h2 class="m-10">Recommendations</h2>
   <div class="grid sm:grid-cols-2 grid-cols-1 gap-4 w-full">
     <recommendation
       *ngFor="let recommendation of recommendations"

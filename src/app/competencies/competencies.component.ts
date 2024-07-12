@@ -7,9 +7,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div>
-      <h3 class="text-center mb-2">{{title}}</h3>
-      <div class="flex flex-col flex-wrap sm:h-40 h-full gap-2">
+    <div class="flex">
+      <h3 class="text-end pr-4 border-r border-r-[gray] mr-4 sm:w-40 w-28">{{title}}</h3>
+      <div class="flex flex-col flex-wrap h-full gap-2">
         <div
           *ngFor="let competency of competencies"
           class="flex items-center w-60"
