@@ -1,4 +1,4 @@
-name: Generate a build and push to gh-pages
+name: Generate a build and deploy to gh-pages
 
 on: workflow_dispatch
 
@@ -17,7 +17,7 @@ jobs:
         run: npm install
       
       - name: Build
-        run: npm run build
+        run: npm run build && ngh --no-silent
       
       - name: Deploy to gh pages
         run: |
