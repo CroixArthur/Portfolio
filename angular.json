@@ -28,8 +28,6 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/delaunay.js",
-              "src/assets/starsCanvas.js",
               "src/assets/tailwindDarkTheme.js"
             ]
           },

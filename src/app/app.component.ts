@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-declare function globalInit(): any;
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,6 +20,5 @@ export class AppComponent {
       document.documentElement.classList.remove('dark')
       localStorage.setItem('theme', 'light');
     }
-    globalInit();
   }
 }

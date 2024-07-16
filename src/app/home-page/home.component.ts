@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Content } from '../models/content.model';
 import { Recommendation } from '../models/recommendation.model';
 import { provideIcons } from '@ng-icons/core';
-import { featherMapPin, featherMail, featherLinkedin, featherPhone } from "@ng-icons/feather-icons";
+import { featherMapPin, featherMail, featherLinkedin, featherPhone, featherCreditCard } from "@ng-icons/feather-icons";
 import { Competency } from '../models/competency.model';
-
-declare function globalInit(): any;
 
 type ListContent = {
   title: String,
@@ -15,10 +13,10 @@ type ListContent = {
 @Component({
   selector: 'app-root',
   templateUrl: './home.component.html',
-  viewProviders: [provideIcons({ featherMapPin, featherMail, featherLinkedin, featherPhone })]
+  viewProviders: [provideIcons({ featherMapPin, featherMail, featherLinkedin, featherPhone, featherCreditCard })]
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   title = 'Portfolio';
   formations: ListContent;
   experiences: ListContent;
@@ -28,6 +26,7 @@ export class HomeComponent implements OnInit {
   compBack: Competency[];
   compDatabases: Competency[];
   compOthers: Competency[];
+  languages: String[];
   compPro: String[];
 
   constructor() {
@@ -72,14 +71,46 @@ export class HomeComponent implements OnInit {
       { name: "Unreal Engine", percentage: 50 },
       { name: "Docker", percentage: 80 },
     ];
-    this.compPro = ["Pédagogie", "Force de proposition", "Méthode Agile", ""]
+    this.languages = [
+      "Français (Natif)", "Anglais (C1)", "Espagnol (B2)"
+    ];
+    this.compPro = ["Pédagogie", "Force de proposition", "Méthode Agile"];
+
+    
+  
+  const STAR_COUNT = 10
+  let result = ""
+  for(let i = 0; i < STAR_COUNT; i++){
+      result += `${this.randomNumber(-50, 50)}vw ${this.randomNumber(-50, 50)}vh ${this.randomNumber(0, 3)}px ${this.randomNumber(0, 3)}px #fff,`
   }
+  console.log(result.substring(0, result.length - 1))
+  }
+  randomNumber = (min: number, max: number) => {
+      return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+
+  // TODO
+  // Langues
+  // Description compétences
+  // Centres d'intérêt
+  // Mention bac
+  // Certifications
+  // Onglet Corée / Passions
+
+  // Maquette
 
   getFormations = () : ListContent => { return {
     title: "Mes Formations",
     content: [
       {
-        title: "Korea University Sejong Campus",
+        title: "(Master) EPITECH Technology - Année 5",
+        content: "Consolidation des acquis des années précédentes. Découverte de nouvelles technologies, et finition du projet de fin d'études.\nCette année m'a également permis de développer mes compétences en pédagogie grâce à mon stage de fin d'études.",
+        startDate: new Date("09/01/2023"),
+        competencies: "C, C++, C#, Javascript (VueJs, ReactJs, React Native), Python, Haskell, Java, Dart (Flutter), ASM, SQL, Docker, PHP, HTML, CSS, Gestion de projet",
+        place: "Nantes, France",
+      },
+      {
+        title: "고려대학교 Korea University Sejong Campus",
         content: "Echange universitaire dans le cadre de ma 4ème année d'études chez Epitech.\nCours d'IA (Réseaux neuronaux, algorithmes de Reinforcement Learning, Machine Learning), cours de Java, création de modules pour le système d'exploitation xv6.",
         startDate: new Date("09/01/2022"),
         endDate: new Date("06/01/2023"),
@@ -87,8 +118,9 @@ export class HomeComponent implements OnInit {
         place: "Sejong, Corée du Sud",
       },
       {
-        title: "(Master) EPITECH Technology",
+        title: "(Master) EPITECH Technology - Année 1, 2, 3",
         content: "Apprentissage en programmation sur de l'algorithmie, de l'intelligence artificielle, de la cybersécurité, du réseau, du jeu vidéo.\nFormation sur la prise en charge de projets informatiques, et de projets de groupe.",
+        endDate: new Date("06/01/2022"),
         startDate: new Date("09/01/2019"),
         competencies: "C, C++, C#, Javascript (VueJs, ReactJs, React Native), Python, Haskell, Java, Dart (Flutter), ASM, SQL, Docker, PHP, HTML, CSS, Gestion de projet",
         place: "Nantes, France",
@@ -151,8 +183,4 @@ export class HomeComponent implements OnInit {
   getRecommendations = () : Recommendation[] => { return [
     { name: "Divoluci", logoPath: "assets/divoluci-logo.png", pdfPath: "assets/divoluci-recommendation.pdf" }
   ]};
-
-  ngOnInit(): void {
-    globalInit(); // For background canvas
-  }
 }
