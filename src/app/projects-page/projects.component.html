@@ -37,17 +37,17 @@
         *ngFor="let but of buttons"
         (click)="onButtonClicked($event, but)"
         [ngClass]="{
-          'bg-green-500 hover:bg-green-500 text-white': but.selected
+          'bg-green-500 hover:!bg-green-500 text-white': but.selected
         }"
         class="text-nowrap py-1 px-2 rounded border border-green-500 hover:bg-green/40"
       >{{but.name}}</button>
     </div>
     <button
       [ngClass]="{
-        'text-green-600 cursor-pointer': hasSelections(),
-        'text-gray-400 cursor-default': !hasSelections()
+        'text-white cursor-pointer border-green-600 bg-green-500/70': hasSelections(),
+        'text-gray-400 cursor-default border-gray-400': !hasSelections()
       }"
-      class="text-nowrap sm:ml-8 mb-6 sm:mb-0"
+      class="text-nowrap sm:ml-8 mb-6 sm:mb-0 p-2 border rounded"
       (click)="clearSelections()"
     >Effacer la sélection</button>
   </div>
