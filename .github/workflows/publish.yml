@@ -21,6 +21,8 @@ jobs:
       
       - name: Deploy to gh pages
         run: |
+          git config --global user.name "CroixArthur"
+          git config --global user.email "arthur.croix.pro@gmail.com"
           npx angular-cli-ghpages --dir=dist/Portfolio --no-silent
         env:
           CI: true
