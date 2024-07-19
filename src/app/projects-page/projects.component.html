@@ -1,15 +1,4 @@
 <main class="main flex-col px-[10%] pt-24">
-  <div
-    *ngIf="displayScrollUp() == true"
-    (click)="scrollToTop()"
-    class="fixed left-0 lg:w-[10vw] w-[10vw] sm:text-sm text-xs md:text-base lg:text-base top-32 flex flex-col items-center hover:cursor-pointer"
-  >
-    <ng-icon
-      size="59"
-      name="featherChevronUp"
-      class="animate-bounce"></ng-icon>
-    <p class="text-center">Haut de page</p>
-  </div>
   <div class="relative w-full">
     <p
       [ngClass]="{
@@ -17,9 +6,9 @@
         'opacity-0 invisible transition-none': !isHelpSelected
       }" class="ml-[calc(25px+0.5rem)] delay-[800ms] p-2 h-auto absolute" id="pageDetails">J'ai pris parti de vous fournir une grande partie des projets sur lesquels j'ai pu travailler afin de vous faire part de mes <strong>expériences</strong> ainsi que de mon <strong>expertise</strong> en programmation et gestion de projet.<br/>
       Mes projets de stage variant beaucoup, j'ai décidé de ne pas les référencer ici<br/>
-      J'ai appris en <a (click)="scrollToAnchor('firstyear')" class="hover:text-green-500 font-bold cursor-pointer">première année</a> d'études à bien <strong>structurer</strong> mon code, à le <strong>documenter</strong> ainsi qu'à le <strong>tester</strong> sur l'une des technologies les plus élémentaires qu'est le langage C.<br/>
-      En <a (click)="scrollToAnchor('secondyear')" class="hover:text-green-500 font-bold cursor-pointer">seconde année</a>, j'ai eu l'occasion de me concentrer sur les langages objets, et plus particulièrement le C++. Dans cet objectif, les projets visés étaient plus conséquents, et nécessitaient donc de plus grand groupes avec une bonne <strong>organisation</strong>.<br/>
-      La <a (click)="scrollToAnchor('thirdyear')" class="hover:text-green-500 font-bold cursor-pointer">troisième année</a> m'a permis de me <strong>diversifier</strong> dans mes compétences. Notamment dans le développement d'applications mobiles, dans la cybersécurité, ainsi que le DevOps.
+      J'ai appris en <strong>première année</strong> d'études à bien <strong>structurer</strong> mon code, à le <strong>documenter</strong> ainsi qu'à le <strong>tester</strong> sur l'une des technologies les plus élémentaires qu'est le langage C.<br/>
+      En <strong>seconde année</strong>, j'ai eu l'occasion de me concentrer sur les langages objets, et plus particulièrement le C++. Dans cet objectif, les projets visés étaient plus conséquents, et nécessitaient donc de plus grand groupes avec une bonne <strong>organisation</strong>.<br/>
+      La <strong>troisième année</strong> m'a permis de me <strong>diversifier</strong> dans mes compétences. Notamment dans le développement d'applications mobiles, dans la cybersécurité, ainsi que le DevOps.
     </p>
     <div [ngClass]="{
       'rounded-lg w-full [transition:height_500ms,width_500ms,border_radius_100ms_100ms]': isHelpSelected,
@@ -48,9 +37,9 @@
         *ngFor="let but of buttons"
         (click)="onButtonClicked($event, but)"
         [ngClass]="{
-          'bg-green-500 text-white': but.selected
+          'bg-green-500 hover:bg-green-500 text-white': but.selected
         }"
-        class="text-nowrap py-1 px-2 rounded border border-green-500"
+        class="text-nowrap py-1 px-2 rounded border border-green-500 hover:bg-green/40"
       >{{but.name}}</button>
     </div>
     <button

@@ -32,99 +32,80 @@ h3 {
 }
 
 .parallax {
-  height: 100%;
   position: relative;
   transform-style: preserve-3d;
 }
 
-.background {
+.planets-background {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  /* background-color: grey; */
   transform: translateZ(-10px) scale(1.5);
+  width: 100%;
 }
 
 .planet {
-  position: relative;
-  background-color: #000;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: -3.5rem;
-    z-index: -1;
-    border-radius: 100%;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(#fff 40%, #22C55E 58%, transparent 71%);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    border-radius: 100%;
-    width: 150%;
-    height: 150%;
-    top: -25%;
-    left: -1px;
-    background: radial-gradient(#000 62%, #22C55E 68%, #fff 74%);
-    clip-path: circle(34% at 34% center);
-  }
+  transform: translateZ(-10px) scale(1.5);
 }
 
-.stars1 {
+.planet::before {
+  content: "";
   position: absolute;
-  /* background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 10px); */
-  /* background-size: 549px 890px; */
-  /* background-position: 0 0; */
-  transform: translateZ(-20px) scale(1.9);
+  z-index: -1;
+  border-radius: 100%;
   width: 100%;
   height: 100%;
-  /* background-color: red; */
-
-  &.test {
-    width: 1px;
-    height: 1px;
-    box-shadow: 6vw 41vh 0px 3px #fff,11vw -2vh 0px 0px #fff,-4vw -23vh 2px 0px #fff,-15vw -1vh 3px 2px #fff,46vw 44vh 2px 2px #fff,-44vw 8vh 1px 0px #fff,-2vw 25vh 2px 2px #fff,-49vw -2vh 1px 3px #fff,-49vw -17vh 3px 1px #fff,-6vw 44vh 0px 3px #fff;
-    border-radius: 100%;
-  }
+  background: radial-gradient(#fff 40%, #22C55E 58%, transparent 71%);
 }
 
-.stars2 {
+.planet::after {
+  content: "";
   position: absolute;
-  /* background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center; */
-  background-image: radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 10px);
-  background-size: 160px 522px;
-  background-position: 40px 60px;
-  transform: translateZ(-20px) scale(1.9);
-  width: 100%;
-  height: 100%;
-  /* background-color: red; */
+  border-radius: 100%;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -1px;
+  clip-path: circle(34% at 34% center);
 }
 
-.stars3 {
-  position: absolute;
-  /* background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center; */
-  background-image: radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 10px);
-  background-size: 885px 383px;
-  background-position: 130px 270px;
-  transform: translateZ(-20px) scale(1.9);
-  width: 100%;
-  height: 100%;
-  /* background-color: red; */
+.planet.moon::after {
+  clip-path: circle(33% at 63% 40%);
 }
 
-.stars4 {
+.nebula {
+  transform: translateZ(-40px) scale(3);
+}
+
+.stars-background-1 {
   position: absolute;
-  /* background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center; */
-  background-image: radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 10px);
-  background-size: 918 923px;
-  background-position: 70px 100px;
-  transform: translateZ(-20px) scale(1.9);
   width: 100%;
-  height: 100%;
-  /* background-color: red; */
+  height: 70%;
+  top: 0;
+  left: 0;
+  transform: translateZ(-20px) scale(2);
+  background-repeat: repeat;
+  background-image: url("assets/background1.png");
+}
+
+.stars-background-2 {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  top: 0;
+  left: 0;
+  transform: translateZ(-15px) scale(1.75);
+  background-repeat: repeat;
+  background-image: url("assets/background2.png");
+}
+
+.stars-background-3 {
+  position: absolute;
+  width: 100%;
+  height: 65%;
+  top: 0;
+  left: 0;
+  transform: translateZ(-25px) scale(2.25);
+  background-repeat: repeat;
+  background-image: url("assets/background3.png");
 }
 
 main {
@@ -163,7 +144,6 @@ a {
   transform: scaleX(1);
 }
 
-
 .link {
   position: relative;
   text-decoration: none;
@@ -180,8 +160,37 @@ a {
   transition: width 0.5s;
 }
 
-.link:hover::before {
+.selectable-with-child:hover > .link::before {
   width: 100%;
+}
+
+.phone-parent:hover > ng-icon {
+  animation: ring 4s .7s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes ring {
+  0% { transform: rotate(0); }
+  5% { transform: rotate(30deg); }
+  10% { transform: rotate(-28deg); }
+  15% { transform: rotate(34deg); }
+  20% { transform: rotate(-32deg); }
+  25% { transform: rotate(30deg); }
+  30% { transform: rotate(-28deg); }
+  35% { transform: rotate(26deg); }
+  40% { transform: rotate(-24deg); }
+  45% { transform: rotate(22deg); }
+  50% { transform: rotate(-20deg); }
+  55% { transform: rotate(18deg); }
+  60% { transform: rotate(-16deg); }
+  65% { transform: rotate(14deg); }
+  70% { transform: rotate(-12deg); }
+  75% { transform: rotate(10deg); }
+  80% { transform: rotate(-8deg); }
+  85% { transform: rotate(6deg); }
+  90% { transform: rotate(-4deg); }
+  95% { transform: rotate(2deg); }
+  100% { transform: rotate(-1deg); }
 }
 
 @layer utilities {

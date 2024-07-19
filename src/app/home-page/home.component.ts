@@ -75,28 +75,12 @@ export class HomeComponent {
       "Français (Natif)", "Anglais (C1)", "Espagnol (B2)"
     ];
     this.compPro = ["Pédagogie", "Force de proposition", "Méthode Agile"];
-
-    
-  
-  const STAR_COUNT = 10
-  let result = ""
-  for(let i = 0; i < STAR_COUNT; i++){
-      result += `${this.randomNumber(-50, 50)}vw ${this.randomNumber(-50, 50)}vh ${this.randomNumber(0, 3)}px ${this.randomNumber(0, 3)}px #fff,`
-  }
-  console.log(result.substring(0, result.length - 1))
-  }
-  randomNumber = (min: number, max: number) => {
-      return Math.floor(Math.random() * (max - min + 1)) + min
   }
 
   // TODO
-  // Langues
   // Description compétences
   // Centres d'intérêt
-  // Mention bac
-  // Certifications
   // Onglet Corée / Passions
-
   // Maquette
 
   getFormations = () : ListContent => { return {
@@ -149,7 +133,7 @@ export class HomeComponent {
         title: "DIVOLUCI - Développeur Mobile Full-Stack",
         content: "Développement de l'application mobile pour les patients. Prise de rendez vous, communication avec un professionnel de santé, gestion d'utilisateurs multiples, communication avec une api.\nDéveloppement de l'API pour l'application mobile.\nOrganisation et architecture du projet.",
         startDate: new Date("09/01/2023"),
-        endDate: new Date("04/01/2023"),
+        endDate: new Date("03/01/2024"),
         competencies: "PHP, MySQL, HTML5, Javascript, CSS, Symfony 5, VueJs, Docker, Dart (Flutter), Gestion de projet",
         place: "Nantes, France",
       },

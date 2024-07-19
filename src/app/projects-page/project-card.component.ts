@@ -5,7 +5,7 @@ import { Project } from "../models/project.model";
   selector: 'project-card',
   template: `
     <div
-      class="h-full dark:bg-gray-700 bg-gray-300 rounded-lg p-4 flex flex-col"
+      class="h-full dark:bg-gray-700 bg-gray-300 dark:bg-opacity-70 rounded-lg p-4 flex flex-col"
       [ngClass]="{ 'opacity-50 pointer-events-none': matchingTechnos.length == 0 && selectedTechnos.length > 0 }"
     >
       <div class="w-full flex justify-between"><h2 class="mb-2">{{project.name}}</h2><p *ngIf="project.context" class="text-gray-600 dark:text-neutral-400 text-end">{{project.context}}</p></div>

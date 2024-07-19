@@ -18,7 +18,6 @@ export class ProjectsComponent implements OnDestroy, OnInit {
   selected: String[] = [];
   projects: Project[] = [];
   containerHeight = signal(0);
-  displayScrollUp = signal(false);
 
   constructor(private viewportScroller: ViewportScroller) {
     this.projects = this.getProjects()
@@ -27,7 +26,6 @@ export class ProjectsComponent implements OnDestroy, OnInit {
       .concat(this.getFirstYearProjects());
     this.getButtons();
     window.addEventListener("resize", this.onWindowResized);
-    window.addEventListener("scroll", this.shouldDisplayScrollUp);
   }
 
   ngOnDestroy(): void {
@@ -65,14 +63,6 @@ export class ProjectsComponent implements OnDestroy, OnInit {
     else this.selected = [...this.selected, button.name];
     button.selected = !button.selected;
   }
-
-  shouldDisplayScrollUp = () => window.scrollY > 200
-    ? this.displayScrollUp() == false ? this.displayScrollUp.set(true) : {}
-    : this.displayScrollUp() == true ? this.displayScrollUp.set(false) : {};
-  
-  scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" })
-
-  scrollToAnchor = (id: string) => this.viewportScroller.scrollToAnchor(id);
 
   getFilteredProjects = () => this.selected.length === 0
     ? this.projects.filter(project => project.context !== "Epitech 1ère année"
@@ -404,34 +394,5 @@ export class ProjectsComponent implements OnDestroy, OnInit {
         }
       }
     }
-  } 
-/*
-  getButtons = () : Button[] => { return [
-    { name: "HTML", selected: false },
-    { name: "CSS", selected: false },
-    { name: "Javascript", selected: false },
-    { name: "Typescript", selected: false },
-    { name: "VueJS", selected: false },
-    { name: "ReactJS", selected: false },
-    { name: "Angular", selected: false },
-    { name: "Dart (Flutter)", selected: false },
-    { name: "React Native", selected: false },
-    { name: "PHP", selected: false },
-    { name: "NodeJS", selected: false },
-    { name: "C#", selected: false },
-    { name: "SQL", selected: false },
-    { name: "RavenDB", selected: false },
-    { name: "Firebase", selected: false },
-    { name: "C", selected: false },
-    { name: "C++", selected: false },
-    { name: "Python", selected: false },
-    { name: "Haskell", selected: false },
-    { name: "ASM", selected: false },
-    { name: "Java", selected: false },
-    { name: "Docker", selected: false },
-    { name: "Godot", selected: false },
-    { name: "Unity", selected: false },
-    { name: "Unreal Engine", selected: false }
-  ]};
-  */
+  }
 }

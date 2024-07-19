@@ -1,5 +1,16 @@
 <nav class="w-full h-20 bg-gray-100 dark:bg-gray-800 dark:text-neutral-100 flex items-center fixed top-0 z-50">
   <div class="flex-1"></div>
+  <div
+    *ngIf="displayScrollUp() == true"
+    (click)="scrollToTop()"
+    class="absolute left-0 lg:w-[10vw] w-[10vw] sm:text-sm text-xs md:text-base lg:text-base top-32 flex flex-col items-center hover:cursor-pointer"
+  >
+    <ng-icon
+      size="59"
+      name="featherChevronUp"
+      class="animate-bounce"></ng-icon>
+    <p class="text-center">Haut de page</p>
+  </div>
   <ul class="flex flex-[5] justify-center sm:gap-16 gap-8">
     <li><a
       class="text-xl font-bold dark:hover:text-white hover:text-gray-600 growing-underline dark:before:bg-white before:bg-gray-600 text-gray-400"

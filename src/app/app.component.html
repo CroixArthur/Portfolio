@@ -7,16 +7,17 @@
 
 <div class="main main-container">
   <div class="parallax">
-    <!-- Background -->
-    <div class="background -z-10">
-
-      <div class="relative w-[35vw] h-[35vw] rounded-full mt-[30%] ml-[80%] planet"></div>
+    <!-- Planets -->
+    <div class="planets-background">
+      <div class="ml-[90%] mt-[10%] h-[35vw] w-[35vw] rounded-full before:xl:-left-14 before:lg:-left-10 before:md:-left-8 before:sm:-left-6 before:-left-4 planet dark:after:bg-radial-gradient-[#000_62%,#22C55E_68%,#fff_74%] after:bg-radial-gradient-[#fff_62%,#22C55E_68%,#fff_74%] grayscale dark:grayscale-0"></div>
+      <div class="ml-[75%] mt-[3%] h-[5vw] w-[5vw] rounded-full before:xl:-left-3 before:lg:-left-10 before:md:-left-8 before:sm:-left-6 before:-left-4 planet moon before:content-none dark:after:bg-radial-gradient-[#000_53%,#22C55E_68%,#fff_74%] after:bg-radial-gradient-[#fff_53%,#22C55E_68%,#fff_74%] grayscale dark:grayscale-0"></div>
     </div>
+    <!-- Crab Nebula -->
+    <img src="assets/crab_nebula.png" class="absolute -left-[80%] top-[60%] h-[30vw] w-[30vw] nebula grayscale dark:grayscale-0"/>
     <!-- Stars -->
-    <div class="stars1 test"></div>
-    <!-- <div class="stars2"></div> -->
-    <!-- <div class="stars3"></div> -->
-    <!-- <div class="stars4"></div> -->
+    <div class="stars-background-1 invert dark:invert-0"></div>
+    <div class="stars-background-2 invert dark:invert-0"></div>
+    <div class="stars-background-3 invert dark:invert-0"></div>
     <!-- Content -->
     <router-outlet></router-outlet>
   </div>
