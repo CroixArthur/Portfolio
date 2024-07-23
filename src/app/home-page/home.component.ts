@@ -165,6 +165,6 @@ export class HomeComponent {
   }};
 
   getRecommendations = () : Recommendation[] => { return [
-    { name: "Divoluci", logoPath: "assets/divoluci-logo.png", pdfPath: "assets/divoluci-recommendation.pdf" }
+    { name: "Divoluci", logoPath: "assets/divoluci-logo.png", pdfPath: "assets/divoluci-recommendation.pdf", logoAlt: "Divoluci logo" }
   ]};
 }

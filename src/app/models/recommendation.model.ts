@@ -1,5 +1,6 @@
 export type Recommendation = {
   name: String,
   logoPath: String,
-  pdfPath: String
+  pdfPath: String,
+  logoAlt: String
 }

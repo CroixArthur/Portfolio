@@ -1,7 +1,7 @@
 <main class="content flex flex-col">
   <div class="flex sm:flex-row flex-col items-center">
     <div class="sm:h-80 sm:w-80 h-48 w-48 rounded-full overflow-hidden relative">
-      <img src="assets/photo_pro.jpg" class="w-auto -mt-[20%]" alt="Photo de profil"/>
+      <img src="assets/photo_pro.jpg" class="w-auto h-auto -mt-[20%]" alt="Photo de profil"/>
     </div>
     <div class="sm:w-[30vw] w-[80vw] sm:mt-0 mt-8 sm:ml-8 md:ml-4 flex flex-col justify-center text-center">
       <h1>Arthur Croix</h1>
@@ -92,7 +92,7 @@
   <ul class="flex sm:gap-16 gap-8 flex-wrap justify-center">
     <li><h3 *ngFor="let competency of compPro">{{ competency }}</h3></li>
   </ul>
-  <h2 class="m-10">Recommendations</h2>
+  <h2 class="m-10">Recommandations</h2>
   <div class="flex justify-center w-full">
     <recommendation
       *ngFor="let recommendation of recommendations"

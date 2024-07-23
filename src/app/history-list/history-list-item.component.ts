@@ -4,7 +4,7 @@ import { Content } from "../models/content.model";
 @Component({
     selector: 'history-list-item',
     template: `
-      <li class="flex mb-4">
+      <div class="flex mb-4">
         <div class="mr-2">
           <div class="bg-gray-500 w-[18px] h-[18px] mt-[5px] rounded-full"
             [class]="{
@@ -36,7 +36,7 @@ import { Content } from "../models/content.model";
           <p class="whitespace-pre-wrap">{{content.content}}</p>
           <p *ngIf="content.competencies" class="mt-2"><span class="text-gray-500 dark:text-gray-400 font-bold">Compétences:</span> {{content.competencies}}</p>
         </div>
-      </li>
+      </div>
     `
 })
 export class HistoryListItemComponent {
