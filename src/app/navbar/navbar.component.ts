@@ -3,6 +3,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { CommonModule } from '@angular/common';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { featherChevronUp } from '@ng-icons/feather-icons';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,8 @@ import { featherChevronUp } from '@ng-icons/feather-icons';
   imports: [
     AppRoutingModule,
     CommonModule,
-    NgIconComponent
+    NgIconComponent,
+    TranslateModule
   ],
   providers: [provideIcons({ featherChevronUp })],
   templateUrl: './navbar.component.html'

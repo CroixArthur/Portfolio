@@ -1,0 +1,270 @@
+{
+  "TOTOP": "Haut de page",
+  "HOME": {
+    "TITLE": "Développeur Full Stack",
+    "QUALITIES": "Ouverture d'esprit - Dynamique - Polyvalent - Curieux - Organisé - Assidu - Sens de l'écoute",
+    "PROFILE": "Profil",
+    "INFO": "Je suis actuellement en recherche d'un <strong>CDD ou CDI</strong> pour Septembre 2024 dans le domaine du développement mobile, web ou desktop.<br/>Le poste de chef de projet m'intéresse grandement, mais je reste ouvert à tout poste de développement informatique.<br/><br/>Mes expériences professionnelles m'ont permis de m'épanouir dans l'environnement Web et Mobile en tant que Full Stack. J'en ait acquis par la même occasion des compétences en communication, management et organisation.<br/>Pour des informations complémentaires, n'hésitez pas à me contacter par téléphone ou par mail.",
+    "FORMATIONS": {
+      "TITLE": "Mes formations",
+      "HS": {
+        "TITLE": "Baccalauréat Scientifique Sciences de l'Ingénieur",
+        "CONTENT": "Saint Aubin la Salle"
+      },
+      "E123": {
+        "TITLE": "(Master) EPITECH Technology - 1ère, 2nde, 3ème année",
+        "CONTENT": "Apprentissage en programmation sur de l'algorithmie, de l'intelligence artificielle, de la cybersécurité, du réseau, du jeu vidéo.<br/>Formation sur la prise en charge de projets informatiques, et de projets de groupe."
+      },
+      "KU": {
+        "TITLE": "고려대학교 Korea University Sejong Campus",
+        "CONTENT": "Echange universitaire dans le cadre de ma 4ème année d'études chez Epitech.<br/>Cours d'IA (Réseaux neuronaux, algorithmes de Reinforcement Learning, Machine Learning), cours de Java, création de modules pour le système d'exploitation xv6."
+      },
+      "E5": {
+        "TITLE": "(Master) EPITECH Technology - 5ème année",
+        "CONTENT": "Consolidation des acquis des années précédentes. Découverte de nouvelles technologies, et finition du projet de fin d'études.<br/>Cette année m'a également permis de développer mes compétences en pédagogie grâce à mon stage de fin d'études."
+      }
+    },
+    "EXPERIENCES": {
+      "TITLE": "Mes expériences",
+      "S": {
+        "TITLE": "Soluflam - Web Designer",
+        "CONTENT": "Réalisation du site internet professionnel de l'entreprise sous Wix.\nSuivi d'un cahier des charges.\nCommunication perpétuelle avec le client."
+      },
+      "C42": {
+        "TITLE": "Code 42 - Développeur Web Full-Stack",
+        "CONTENT": "Développement autour de l'ERP (Planificateur de ressources d'entreprise) open source DOLIBARR.\nDéveloppement de nouveaux modules pour l'ERP de plusieurs entreprises clientes."
+      },
+      "DDWFS": {
+        "TITLE": "DIVOLUCI - Développeur Web Full-Stack",
+        "CONTENT": "Développement de nouvelles fonctionnalités et implémentation de connecteurs et composants de communication avec des systèmes tiers pour l'application web (DMP, INSi, ProSanté Connect, etc.)"
+      },
+      "DDMFS": {
+        "TITLE": "DIVOLUCI - Développeur Mobile Full-Stack",
+        "CONTENT": "Développement de l'application mobile pour les patients. Prise de rendez vous, communication avec un professionnel de santé, gestion d'utilisateurs multiples, communication avec une api.\nDéveloppement de l'API pour l'application mobile.\nOrganisation et architecture du projet."
+      },
+      "ETC": {
+        "TITLE": "EPITECH - Teaching & Coaching",
+        "CONTENT": "Assistant pédagogique auprès des élèves des branches préMSC, MSC1 et MSC2 d'Epitech Nantes.\nMontée en compétences sur de nouvelles technologies pour répondre aux questions des étudiants."
+      }
+    },
+    "COMPUTERSKILLS": "Compétences informatiques"
+  },
+  "ACTUAL": "actuel",
+  "SOUTHKOREA": "Corée du Sud",
+  "DATE": {
+    "SINCE": "Depuis {{month}} {{year}}",
+    "FROMTO": "De {{startMonth}} {{startYear}} à {{endMonth}} {{endYear}}",
+    "JANUARY": "Janvier",
+    "FEBRUARY": "Février",
+    "MARCH": "Mars",
+    "APRIL": "Avril",
+    "MAY": "Mai",
+    "JUNE": "Juin",
+    "JULY": "Juillet",
+    "AUGUST": "Août",
+    "SEPTEMBER": "Septembre",
+    "OCTOBER": "Octobre",
+    "NOVEMBER": "Novembre",
+    "DECEMBER": "Décembre"
+  },
+  "COMPETENCIES": "Compétences",
+  "DATABASES": "Bases de données",
+  "OTHERS": "Autres",
+  "SPOKENLANGUAGES": "Langues parlées",
+  "NATIVE": "Natif",
+  "FRENCH": "Français",
+  "ENGLISH": "Anglais",
+  "SPANISH": "Espagnol",
+  "OTHERCOMPETENCIES": "Autres compétences",
+  "RECOMMENDATIONS": "Recommandations",
+  "PEDAGOGY": "Pédagogie",
+  "PROACTIVE": "Force de proposition",
+  "AGILEMETHOD": "Méthode Agile",
+  "CREATIVE": "Créatif",
+  "OBJECTIVE": "Objectif",
+  "PROJECTS": {
+    "TITLE": "Projets",
+    "MOREINFO": "Plus d'informations",
+    "DESCRIPTION": "J'ai pris parti de vous fournir une grande partie des projets sur lesquels j'ai pu travailler afin de vous faire part de mes <strong>expériences</strong> ainsi que de mon <strong>expertise</strong> en programmation et gestion de projet.<br/>Mes projets de stage variant beaucoup, j'ai décidé de ne pas les référencer ici.<br/>J'ai appris en <strong>première année</strong> d'études à bien <strong>structurer</strong> mon code, à le <strong>documenter</strong> ainsi qu'à le <strong>tester</strong> sur l'une des technologies les plus élémentaires qu'est le langage C.<br/>En <strong>seconde année</strong>, j'ai eu l'occasion de me concentrer sur les langages objets, et plus particulièrement le C++. Dans cet objectif, les projets visés étaient plus conséquents, et nécessitaient donc de plus grand groupes avec une bonne <strong>organisation</strong>.<br/>La <strong>troisième année</strong> m'a permis de me <strong>diversifier</strong> dans mes compétences. Notamment dans le développement d'applications mobiles, dans la cybersécurité, ainsi que le DevOps.",
+    "INFOSELECT": "Veuillez sélectionner les boutons ci-dessous pour filter les projets par compétences",
+    "ERASESELECTION": "Effacer la sélection",
+    "CYBERSECURITY": "Cybersécurité",
+    "EPI3Y": "Epitech 3ème année",
+    "EPI2Y": "Epitech 2nde année",
+    "EPI1Y": "Epitech 1ère année",
+    "EPI4Y": "Korea University, Epitech 4ème année",
+    "EPI345Y": "Epitech 3ème/4ème/5ème année",
+    "QWID": {
+      "CONTENT": "Projet de fin d'études chez Epitech en 3 ans.\nConception d'un projet d'automédication.\nDéveloppement en méthode agile.\nRéalisation d'un fichier PLD listant nos tâches à réaliser pour chaque sprint.\nRéalisation d'un business model, réalisation de tests utilisateurs, présentation à un jury externe puis interne.",
+      "GOAL": "Développer un projet commercialisable de A à Z : Développement d'un business model, mise en place d'une méthode agile de longue durée, contact auprès de potentiels clients"
+    },
+    "PORTFOLIO": {
+      "CONTENT": "Réalisation de mon portfolio en Angular pour découvrir la technologie.",
+      "GOAL": "Découverte d'Angular"
+    },
+    "AICS": {
+      "CONTENT": "Projet d'études sur le système d'exploitation xv6. Développement de fonctions système et de différents modules.",
+      "GOAL": "Apprentissage de la structure d'un système d'exploitation. Développement de modules"
+    },
+    "ADVENTOFCODE2023": {
+      "CONTENT": "Mini projets de la plateforme advent of code\nPremière partie réalisée afin de découvrir le langage Rust. Deuxième partie réalisée afin de découvrir le langage F#.",
+      "GOAL": "Découverte de Rust et du F#"
+    },
+    "AREA": {
+      "CONTENT": "Projet de fin d'études de 3ème année chez Epitech.\nRéalisation d'un tableau de bord permettant de configurer des actions pour ses comptes Spotify, Paypal et Github.",
+      "GOAL": "Réussir à mettre en place une connexion et des actions envers un service tiers. Proposer aux utilisateurs du multi-plateforme (web et mobile). Sécuriser les accès aux comptes et fonctionnalités de l'application. Gérer un groupe de projet"
+    },
+    "REDITECH": {
+      "CONTENT": "Réalisation d'un projet de réseau social en réutilisant l'API de Reddit.",
+      "GOAL": "Réutiliser l'API d'un service existant. Comprendre les protocoles d'authentification (OAuth2). Soigner son UI/UX"
+    },
+    "DASHBOARD": {
+      "CONTENT": "Développement d'une application de tableau de bord type Netvibes.\nCréation d'un système d'authentification basique et OAuth2.\nMise en place d'un système d'abonnement à certains services.\nServices supportés: Weather, Youtube",
+      "GOAL": "Développer une application du point de vue d'un architecte logiciel"
+    },
+    "CHISEL": {
+      "CONTENT": "Réalisation de challenges de cybersécurité sur des serveurs privés via le site internet TryHackMe.",
+      "GOAL": "Découvrir et expérimenter les différents types d'attaque possible sur un système pour mieux les prévenir"
+    },
+    "BABEL": {
+      "CONTENT": "Réalisation d'un projet client/serveur de communication type Skype ou TeamSpeak.",
+      "GOAL": "Produire un projet utilisable sur n'importe quel système Unix ou Windows. Permettre la communication via Internet entre deux clients. Découverte de QT5. Gérer un groupe de projet"
+    },
+    "FAIREFUND": {
+      "CONTENT": "Création d'une application mobile sur le concept de Tricount.\nPlutôt que de lier des paiements sur un groupe de personnes, ceux-ci se font de manière individuelle.\nProjet réalisé dans le cadre des projets HUB d'Epitech Nantes.",
+      "GOAL": "Découverte du langage React Native, découverte de Firebase, montée en compétences sur le développement mobile"
+    },
+    "INDIE": {
+      "CONTENT": "Projet de fin d'études de 2ème année chez Epitech.\nRéalisation d'un jeu de type Bomberman en C++ grâce à la Raylib.\nGénération aléatoire de terrain, apprentissage et application de shaders.",
+      "GOAL": "Mise en pratique des technologies apprises durant l'année sur un projet important (langage objet). Apprentissage de la Raylib pour l'affichage. Gérer un groupe de projet"
+    },
+    "PLAZZA": {
+      "CONTENT": "Création d'un cuisine virtuelle avec gestion des stocks, définition des différents types de pizza, et minuteur pour chaque commande.",
+      "GOAL": "Découvrir les mutex et la communication inter-processus (IPC)"
+    },
+    "ICOMPRESS": {
+      "CONTENT": "Compresseur d'images réalisé en Haskell.",
+      "GOAL": "Comprendre comment fonctionne la compression d'image, et la réaliser"
+    },
+    "ARCADE": {
+      "CONTENT": "Création d'une borne d'arcade virtuelle permettant de jouer à 2 jeux au choix.\nLe but de ce projet était de parvenir à encapsuler chaque jeu afin qu'ils soient jouables sur les librairies graphiques SDL2, Ncurses, SFML, ou autre.",
+      "GOAL": "Rendre une modularisation générique. Communiquer entre les groupes pour offrir un code réutilisable entre chaque projet"
+    },
+    "WOLFRAM": {
+      "CONTENT": "Réalisation de l'automate cellulaire élémentaire de Wolfram en Haskell.\nImpémentation des règles 30, 90 et 110.",
+      "GOAL": "Faire travailler son algorithmie en Haskell"
+    },
+    "NMOBJ": {
+      "CONTENT": "Reproduction de la commande système objdump -f -s en C.",
+      "GOAL": "Comprendre la structure d'un fichier binaire (ELF)"
+    },
+    "NTS": {
+      "CONTENT": "Réalisation d'un simulateur de circuit électronique basique.\nPermet à l'utilisateur de charger un circuit depuis un fichier de configuration, et de le simuler.",
+      "GOAL": "Apprendre à bien modulariser les composants dans son code"
+    },
+    "ASM": {
+      "CONTENT": "Reproduction de plusieurs fonctions basiques de la librairie C en Assembler.",
+      "GOAL": "Apprendre à développer en langage assembler x86-64. Comprendre comment il gère la mémoire, et en quoi est t'il utile"
+    },
+    "MALLOC": {
+      "CONTENT": "Reproduction de la commande système malloc.\nProgramme d'allocation de mémoire sur la heap d'une RAM.",
+      "GOAL": "Comprendre les mécanismes de gestion de la mémoire"
+    },
+    "PUSHCHK": {
+      "CONTENT": "Réalisation d'un programme vérifiant si une liste de nombres respecte une liste d'opérations donnée (échange des deux premiers éléments, échanges du premier et dernier élément, etc...).",
+      "GOAL": "Familiarisation avec le langage Haskell"
+    },
+    "PISCH": {
+      "NAME": "Piscine de Haskell",
+      "CONTENT": "3 jours intensifs dédiés à l'apprentissage du langage fonctionnel Haskell.",
+      "GOAL": "Découvrir le langage fonctionnel Haskell"
+    },
+    "PISCCPP": {
+      "NAME": "Piscine de C++",
+      "CONTENT": "2 Semaines intensives réservées à l'apprentissage du langage objet C++.",
+      "GOAL": "Découvrir le langage objet, et ses applications"
+    },
+    "MYRPG": {
+      "CONTENT": "Projet de fin d'études de 1ère année chez Epitech.\nCréation d'un jeu vidéo type RPG en CSFML.\nMise en pratique de tout ce qui a été vu durant l'année.",
+      "GOAL": "Mettre en oeuvre ce qui a été vu durant l'année en matière visuelle (UI/UX, chargement de fichiers, algorithmie)"
+    },
+    "EPYTODO": {
+      "CONTENT": "Création d'une API et d'une base de données SQL pour une application de planification de tâches (style trello).",
+      "GOAL": "Comprendre et développer une API de manière sécurisée. Travailler en groupe pour rendre le projet dans les temps"
+    },
+    "NEED4": {
+      "CONTENT": "Développement d'une IA de voiture. Le but étant de faire avancer une voiture sur un circuit, et de le terminer sans se prendre de bord.\nProjet réalisé sur le simulateur CoppeliaSim.",
+      "GOAL": "Créer une IA et l'optimiser. Travailler en groupe pour rendre le projet dans les temps"
+    },
+    "COREWAR": {
+      "CONTENT": "Réalisation d'une simulation sur machine virtuelle.\nPlusieurs programmes sont créés sur une même RAM, et \"combattent\" entre eux jusqu'à définir un vainqueur.",
+      "GOAL": "Mettre en oeuvre ce qui a été vu durant l'année en relation avec la mémoire vive. Travailler en groupe pour rendre le projet dans les temps"
+    },
+    "MYDEF": {
+      "CONTENT": "Création d'un jeu vidéo type tower defense en CSFML.",
+      "GOAL": "Création d'une UI. Gestion d'images, de sons et d'animations"
+    },
+    "MYHUN": {
+      "CONTENT": "Création d'un jeu vidéo type Duck Hunt en CSFML.",
+      "GOAL": "Gestion d'une fenêtre et des ressources affichables, stockage de données de manière persistante"
+    },
+    "MYRAD": {
+      "CONTENT": "Création d'un simulateur de gestion d'avions et de tour de contrôles en CSFML.",
+      "GOAL": "Gestion des entités de l'application (sprite, collision, etc...). Travail d'optimisation"
+    },
+    "PUSH": {
+      "CONTENT": "Réalisation d'un utilitaire de liste chaînée: rotation des éléments, échange, etc...",
+      "GOAL": "Approfondissement des listes chaînées du langage C"
+    },
+    "BSQ": {
+      "CONTENT": "Réalisation d'un algorithme pour trouver le carré le plus grand sur un tableau, tout en évitant des obstacles.",
+      "GOAL": "Gestion des structures de données en C. Optimisation du projet"
+    },
+    "GNL": {
+      "CONTENT": "Création d'un lecteur de fichier, ligne par ligne.",
+      "GOAL": "Découverte de la prise en main de l'ouverture et lecture d'un fichier"
+    },
+    "MATH": {
+      "NAME": "Mathématiques appliquées",
+      "CONTENT": "Suite de projets de mathématiques appliqués en C et Python.\n- 101pong: Calcul de la trajectoire d'une balle.\n- 102architect: Calcul des coordonnées d'un point suite à plusieurs transformations dans un espace.\n- 103cipher: Encryption/Décryption d'un message à l'aide d'une clé matrice.\n- 104intersection: Calcul des intersections entre un rayon de lumière et un objet 3D dans un espace.\n- 105torus: Prolongement du 104intersection sur un torus. Le but de ce projet étant de résoudre une équation du 4ème degré.",
+      "GOAL": "Faire travailler son algorithmie en C et en Python"
+    },
+    "MATCH": {
+      "CONTENT": "Réalisation d'un jeu de matchstick où un joueur et une IA s'affrontent. Le but du jeu étant de ne pas prendre la dernière allumette sur le plateau.",
+      "GOAL": "Chercher la plus simple résolution. Suivre une norme d'affichage"
+    },
+    "LEMIN": {
+      "CONTENT": "Réalisation d'un algorithme de résolution de labyrinthe composé de \"salles\" et de \"chemins\".\nLe but étant de fournir le meilleur chemin jusqu'à la sortie en un temps record.",
+      "GOAL": "Faire travailler mon algorithmie, et mes compétences en C. En particulier l'usage de listes chaînées"
+    },
+    "DANTE": {
+      "CONTENT": "Réalisation d'un algorithme de génération de labyrinthes en 2D, ainsi que d'un solveur.",
+      "GOAL": "Faire travailler mon algorithmie, et mes compétences en C"
+    },
+    "BISTRO": {
+      "CONTENT": "Réalisation d'une calculatrice à nombres infinis.",
+      "GOAL": "Mettre en pratique toutes les compétences vues durant la piscine de C au sein d'un projet de groupe"
+    },
+    "PISCC": {
+      "NAME": "Piscine de C",
+      "CONTENT": "2 Semaines intensives réservées à l'apprentissage du langage C et bash.",
+      "GOAL": "Découverte et apprentissage accéléré du langage C"
+    },
+    "TETRIS": {
+      "CONTENT": "Création du jeu Tetris grâce à la librairie NCurses.",
+      "GOAL": "Comprendre et utiliser la librairie Ncurses"
+    },
+    "NAVY": {
+      "CONTENT": "Création d'une bataille navale. Chaque utilisateur doit utiliser un PID pour pouvoir communiquer.",
+      "GOAL": "Comprendre les PID, et les utiliser grâce à des signaux. Communication entre processus"
+    },
+    "SOKOBAN": {
+      "CONTENT": "Réalisation d'un jeu de type sokoban avec la librairie Ncurses.",
+      "GOAL": "Découvrir la libraire Ncurses, améliorer ses connaissances en langage C"
+    },
+    "MINISHELL": {
+      "CONTENT": "Création d'un shell et ses commandes les plus basiques: ls, cat, redirection, pipes, semolicons, etc...",
+      "GOAL": "Comprendre plus en avant comment fonctionne le Shell TCSH"
+    }
+  }
+}

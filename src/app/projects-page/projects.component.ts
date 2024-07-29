@@ -1,9 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, OnDestroy, OnInit, signal } from '@angular/core';
 import { Project } from '../models/project.model';
-import { ViewportScroller } from '@angular/common';
 
 type Button = {
-  name: String,
+  name: string,
   selected: Boolean
 }
 
@@ -15,11 +14,11 @@ type Button = {
 export class ProjectsComponent implements OnDestroy, OnInit {
   isHelpSelected = false;
   buttons: Button[] = [];
-  selected: String[] = [];
+  selected: string[] = [];
   projects: Project[] = [];
   containerHeight = signal(0);
 
-  constructor(private viewportScroller: ViewportScroller) {
+  constructor() {
     this.projects = this.getProjects()
       .concat(this.getThirdYearProjects())
       .concat(this.getSecondYearProjects())
@@ -46,7 +45,7 @@ export class ProjectsComponent implements OnDestroy, OnInit {
   }
 
   setContainerHeight = () => {
-    let el = document.getElementById('pageDetails');
+    let el = document.getElementById('help-text-description');
     if (el) {
       this.containerHeight.set(el.offsetHeight);
     }
@@ -54,8 +53,7 @@ export class ProjectsComponent implements OnDestroy, OnInit {
 
   onToggleHelp() {
     this.isHelpSelected = !this.isHelpSelected;
-    if (this.isHelpSelected)
-      setTimeout(this.setContainerHeight, 1000);
+    this.setContainerHeight();
   }
 
   onButtonClicked($event: MouseEvent, button: Button) {
@@ -65,9 +63,9 @@ export class ProjectsComponent implements OnDestroy, OnInit {
   }
 
   getFilteredProjects = () => this.selected.length === 0
-    ? this.projects.filter(project => project.context !== "Epitech 1ère année"
-                                        && project.context !== "Epitech 2ème année"
-                                        && project.context !== "Epitech 3ème année")
+    ? this.projects.filter(project => project.context !== "PROJECTS.EPI1Y"
+                                        && project.context !== "PROJECTS.EPI2Y"
+                                        && project.context !== "PROJECTS.EPI3Y")
     : [...this.projects].sort((p1, p2) =>
     this.selected.filter(s => p2.techs.includes(s)).length
     - this.selected.filter(s => p1.techs.includes(s)).length);
@@ -82,304 +80,304 @@ export class ProjectsComponent implements OnDestroy, OnInit {
   getProjects = () : Project[] => { return [
     {
       name: "Qwid",
-      content: "Projet de fin d'études chez Epitech en 3 ans.\nConception d'un projet d'automédication.\nDéveloppement en méthode agile.\nRéalisation d'un fichier PLD listant nos tâches à réaliser pour chaque sprint.\nRéalisation d'un business model, réalisation de tests utilisateurs, présentation à un jury externe puis interne.",
+      content: "PROJECTS.QWID.CONTENT",
       techs: ["C#", "RavenDB", "Javascript", "VueJS", "Typescript", "Dart (Flutter)", "HTML", "CSS", "Docker"],
-      context: "Epitech 3ème/4ème/5ème année",
-      goal: "Développer un projet commercialisable de A à Z : Développement d'un business model, mise en place d'une méthode agile de longue durée, contact auprès de potentiels clients"
+      context: "PROJECTS.EPI345Y",
+      goal: "PROJECTS.QWID.GOAL"
     },
     {
       name: "Portfolio",
-      content: "Réalisation de mon portfolio en Angular pour découvrir la technologie.",
+      content: "PROJECTS.PORTFOLIO.CONTENT",
       techs: ["Javascript", "Angular", "Typescript", "HTML", "CSS"],
-      goal: "Découverte d'Angular"
+      goal: "PROJECTS.PORTFOLIO.GOAL"
     },
     {
       name: "AICS",
-      content: "Projet d'études sur le système d'exploitation xv6. Développement de fonctions système et de différents modules.",
+      content: "PROJECTS.AICS.CONTENT",
       techs: ["C"],
-      context: "Korea University, Epitech 4ème année",
-      goal: "Apprentissage de la structure d'un système d'exploitation. Développement de modules."
+      context: "PROJECTS.EPI4Y",
+      goal: "PROJECTS.AICS.GOAL"
     },
     {
       name: "Advent of Code 2023",
-      content: "Mini projets de la plateforme advent of code\nPremière partie réalisée afin de découvrir le langage Rust. Deuxième partie réalisée afin de découvrir le langage F#.",
+      content: "PROJECTS.ADVENTOFCODE2023.CONTENT",
       techs: ["Rust", "F#"],
-      goal: "Découverte de Rust et du F#"
+      goal: "PROJECTS.ADVENTOFCODE2023.GOAL"
     }
   ]};
 
   getThirdYearProjects = () : Project[] => [
     {
       name: "AREA",
-      content: "Projet de fin d'études de 3ème année chez Epitech.\nRéalisation d'un tableau de bord permettant de configurer des actions pour ses comptes Spotify, Paypal et Github.",
+      content: "PROJECTS.AREA.CONTENT",
       techs: ["Typescript", "Javascript", "ReactJS", "Dart (Flutter)", "NodeJS", "HTML", "CSS", "Docker"],
-      context: "Epitech 3ème année",
-      goal: "Réussir à mettre en place une connexion et des actions envers un service tiers. Proposer aux utilisateurs du multi-plateforme (web et mobile). Sécuriser les accès aux comptes et fonctionnalités de l'application. Gérer un groupe de projet."
+      context: "PROJECTS.EPI3Y",
+      goal: "PROJECTS.AREA.GOAL"
     },
     {
       name: "Redditech",
-      content: "Réalisation d'un projet de réseau social en réutilisant l'API de Reddit.",
+      content: "PROJECTS.REDDITECH.CONTENT",
       techs: ["Dart (Flutter)"],
-      context: "Epitech 3ème année",
-      goal: "Réutiliser l'API d'un service existant. Comprendre les protocoles d'authentification (OAuth2). Soigner son UI/UX."
+      context: "PROJECTS.EPI3Y",
+      goal: "PROJECTS.REDDITECH.GOAL"
     },
     {
       name: "Dashboard",
-      content: "Développement d'une application de tableau de bord type Netvibes.\nCréation d'un système d'authentification basique et OAuth2.\nMise en place d'un système d'abonnement à certains services.\nServices supportés: Weather, Youtube",
+      content: "PROJECTS.DASHBOARD.CONTENT",
       techs: ["ReactJS", "NodeJS", "Javascript", "Docker"],
-      context: "Epitech 3ème année",
-      goal: "Développer une application du point de vue d'un architecte logiciel"
+      context: "PROJECTS.EPI3Y",
+      goal: "PROJECTS.DASHBOARD.GOAL"
     },
     {
       name: "Chisel",
-      content: "Réalisation de challenges de cybersécurité sur des serveurs privés via le site internet TryHackMe.",
-      techs: ["Cybersécurité"],
-      context: "Epitech 3ème année",
-      goal: "Découvrir et expérimenter les différents types d'attaque possible sur un système pour mieux les prévenir."
+      content: "PROJECTS.CHISEL.CONTENT",
+      techs: ["PROJECTS.CYBERSECURITY"],
+      context: "PROJECTS.EPI3Y",
+      goal: "PROJECTS.CHISEL.GOAL"
     },
     {
       name: "Babel",
-      content: "Réalisation d'un projet client/serveur de communication type Skype ou TeamSpeak.",
+      content: "PROJECTS.BABEL.CONTENT",
       techs: ["C++"],
-      context: "Epitech 3ème année",
-      goal: "Produire un projet utilisable sur n'importe quel système Unix ou Windows. Permettre la communication via Internet entre deux clients. Découverte de QT5. Gérer un groupe de projet."
+      context: "PROJECTS.EPI3Y",
+      goal: "PROJECTS.BABEL.GOAL"
     }
   ];
 
   getSecondYearProjects = () : Project[] => [
     {
       name: "FaiRefund",
-      content: "Création d'une application mobile sur le concept de Tricount.\nPlutôt que de lier des paiements sur un groupe de personnes, ceux-ci se font de manière individuelle.\nProjet réalisé dans le cadre des projets HUB d'Epitech Nantes.",
+      content: "PROJECTS.FAIREFUND.CONTENT",
       techs: ["React Native", "Javascript", "Firebase"],
-      context: "Epitech 2ème année",
-      goal: "Découverte du langage React Native, découverte de Firebase, montée en compétences sur le développement mobile"
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.FAIREFUND.GOAL"
     },
     {
       name: "Indie Studio",
-      content: "Projet de fin d'études de 2ème année chez Epitech.\nRéalisation d'un jeu de type Bomberman en C++ grâce à la Raylib.\nGénération aléatoire de terrain, apprentissage et application de shaders.",
+      content: "PROJECTS.INDIE.CONTENT",
       techs: ["C++"],
-      context: "Epitech 2ème année",
-      goal: "Mise en pratique des technologies apprises durant l'année sur un projet important (langage objet). Apprentissage de la Raylib pour l'affichage. Gérer un groupe de projet."
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.INDIE.GOAL"
     },
     {
       name: "The plazza",
-      content: "Création d'un cuisine virtuelle avec gestion des stocks, définition des différents types de pizza, et minuteur pour chaque commande.",
+      content: "PROJECTS.PLAZZA.CONTENT",
       techs: ["C++"],
-      context: "Epitech 2ème année",
-      goal: "Découvrir les mutex et la communication inter-processus (IPC)."
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.PLAZZA.GOAL"
     },
     {
       name: "Image Compressor",
-      content: "Compresseur d'images réalisé en Haskell.",
+      content: "PROJECTS.ICOMPRESS.CONTENT",
       techs: ["Haskell"],
-      context: "Epitech 2ème année",
-      goal: "Comprendre comment fonctionne la compression d'image, et la réaliser."
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.ICOMPRESS.GOAL"
     },
     {
       name: "Arcade",
-      content: "Création d'une borne d'arcade virtuelle permettant de jouer à 2 jeux au choix.\nLe but de ce projet était de parvenir à encapsuler chaque jeu afin de pouvoir jouer sur les librairies graphiques SDL2, Ncurses, SFML, ou autre.",
+      content: "PROJECTS.ARCADE.CONTENT",
       techs: ["C++"],
-      context: "Epitech 2ème année",
-      goal: "Rendre une modularisation générique. Communiquer entre les groupes pour offrir un code réutilisable entre chaque projet."
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.ARCADE.GOAL"
     },
     {
       name: "Wolfram",
-      content: "Réalisation de l'automate cellulaire élémentaire de Wolfram en Haskell.\nImpémentation des règles 30, 90 et 110.",
+      content: "PROJECTS.WOLFRAM.CONTENT",
       techs: ["Haskell"],
-      context: "Epitech 2ème année",
-      goal: "Faire travailler son algorithmie en Haskell"
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.WOLFRAM.GOAL"
     },
     {
       name: "nmobjdump",
-      content: "Reproduction de la commande système objdump -f -s en C.",
+      content: "PROJECTS.NMOBJ.CONTENT",
       techs: ["C"],
-      context: "Epitech 2ème année",
-      goal: "Comprendre la structure d'un fichier binaire (ELF)"
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.NMOBJ.GOAL"
     },
     {
       name: "NanoTekSpice",
-      content: "Réalisation d'un simulateur de circuit électronique basique.\nPermet à l'utilisateur de charger un circuit depuis un fichier de configuration, et de le simuler.",
+      content: "PROJECTS.NTS.CONTENT",
       techs: ["C++"],
-      context: "Epitech 2ème année",
-      goal: "Apprendre à bien modulariser les composants dans son code."
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.NTS.GOAL"
     },
     {
       name: "asmminilibc",
-      content: "Reproduction de plusieurs fonctions basiques de la librairie C en Assembler",
+      content: "PROJECTS.ASM.CONTENT",
       techs: ["ASM"],
-      context: "Epitech 2ème année",
-      goal: "Apprendre à développer en langage assembler x86-64. Comprendre comment il gère la mémoire, et en quoi est t'il utile."
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.ASM.GOAL"
     },
     {
       name: "malloc",
-      content: "Reproduction de la commande système malloc.\nProgramme d'allocation de mémoire sur la heap d'une RAM.",
+      content: "PROJECTS.MALLOC.CONTENT",
       techs: ["C"],
-      context: "Epitech 2ème année",
-      goal: "Comprendre les mécanismes de gestion de la mémoire"
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.MALLOC.GOAL"
     },
     {
       name: "Pushswap checker",
-      content: "Réalisation d'un programme vérifiant si une liste de nombres respecte une liste d'opérations donnée (échange des deux premiers éléments, échanges du premier et dernier élément, etc...).",
+      content: "PROJECTS.PUSHCHK.CONTENT",
       techs: ["Haskell"],
-      context: "Epitech 2ème année",
-      goal: "Familiarisation avec le langage Haskell."
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.PUSHCHK.GOAL"
     },
     {
-      name: "Piscine de Haskell",
-      content: "3 jours intensifs réservés à l'apprentissage du langage fonctionnel Haskell.",
+      name: "PROJECTS.PISCH.NAME",
+      content: "PROJECTS.PISCH.CONTENT",
       techs: ["Haskell"],
-      context: "Epitech 2ème année",
-      goal: "Découvrir le langage fonctionnel Haskell"
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.PISCH.GOAL"
     },
     {
-      name: "Piscine de C++",
-      content: "2 Semaines intensives réservées à l'apprentissage du langage objet C++.",
+      name: "PROJECTS.PISCCPP.NAME",
+      content: "PROJECTS.PISCCPP.CONTENT",
       techs: ["C++"],
-      context: "Epitech 2ème année",
-      goal: "Découvrir le langage objet, et ses applications."
+      context: "PROJECTS.EPI2Y",
+      goal: "PROJECTS.PISCCPP.GOAL"
     }
   ];
 
   getFirstYearProjects = () : Project[] => [
     {
       name: "MyRPG",
-      content: "Projet de fin d'études de 1ère année chez Epitech.\nCréation d'un jeu vidéo type RPG en CSFML.\nMise en pratique de tout ce qui a été vu durant l'année.",
+      content: "PROJECTS.MYRPG.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Mettre en commun ce qui a été vu durant l'année en matière visuelle (UI/UX, chargement de fichiers, algorithmie)"
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.MYRPG.GOAL"
     },
     {
       name: "Epytodo",
-      content: "Création d'une API et d'une base de données SQL pour une application de planification de tâches (style trello).",
+      content: "PROJECTS.EPYTODO.CONTENT",
       techs: ["NodeJS", "Javascript", "SQL"],
-      context: "Epitech 1ère année",
-      goal: "Comprendre et développer une API de manière sécurisée. Travailler en groupe pour rendre le projet dans les temps."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.EPYTODO.GOAL"
     },
     {
       name: "Need4Stek",
-      content: "Développement d'une IA de voiture. Le but étant de faire avancer une voiture sur un circuit, et de le terminer sans se prendre de bord.\nProjet réalisé sur le simulateur CoppeliaSim.",
+      content: "PROJECTS.NEED4.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Créer une IA et l'optimiser. Travailler en groupe pour rendre le projet dans les temps."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.NEED4.GOAL"
     },
     {
       name: "Corewar",
-      content: "Réalisation d'une simulation sur machine virtuelle.\nPlusieurs programmes sont créés sur une même RAM, et \"combattent\" entre eux jusqu'à définir un vainqueur.",
+      content: "PROJECTS.COREWAR.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Mettre en commun ce qui a été vu durant l'année en relation avec la mémoire vive. Travailler en groupe pour rendre le projet dans les temps."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.COREWAR.GOAL"
     },
     {
       name: "MyDefender",
-      content: "Création d'un jeu vidéo type tower defense en CSFML.",
+      content: "PROJECTS.MYDEF.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Création d'une UI. Gestion d'images, de sons et d'animations"
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.MYDEF.GOAL"
     },
     {
       name: "MyHunter",
-      content: "Création d'un jeu vidéo type Duck Hunt en CSFML.",
+      content: "PROJECTS.MYHUN.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Gestion d'une fenêtre et des ressources affichables, stockage de données de manière persistante"
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.MYHUN.GOAL"
     },
     {
       name: "MyRadar",
-      content: "Création d'un simulateur de gestion d'avions et de tour de contrôles en CSFML.",
+      content: "PROJECTS.MYRAD.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Gestion des entités de l'application (sprite, collision, etc...). Travail d'optimisation."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.MYRAD.GOAL"
     },
     {
       name: "PushSwap",
-      content: "Réalisation d'un utilitaire de liste chaînée: rotation des éléments, échange, etc...",
+      content: "PROJECTS.PUSH.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Approfondissement des listes chaînées du langage C"
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.PUSH.GOAL"
     },
     {
       name: "BSQ",
-      content: "Réalisation d'un algorithme pour trouver le carré le plus grand sur un tableau, tout en évitant des obstacles.",
+      content: "PROJECTS.BSQ.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Gestion des structures de données en C. Optimisation du projet."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.BSQ.GOAL"
     },
     {
       name: "GetNextLine",
-      content: "Création d'un lecteur de fichier, ligne par ligne.",
+      content: "PROJECTS.GNL.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Découverte de la prise en main de l'ouverture et lecture d'un fichier"
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.GNL.GOAL"
     },
     {
-      name: "Mathématiques appliquées #1",
-      content: "Suite de projets de mathématiques appliqués en C et Python.\n- 101pong: Calcul de la trajectoire d'une balle.\n- 102architect: Calcul des coordonnées d'un point suite à plusieurs transformations dans un espace.\n- 103cipher: Encryption/Décryption d'un message à l'aide d'une clé matrice.\n- 104intersection: Calcul des intersections entre un rayon de lumière et un objet 3D dans un espace.\n105torus: Prolongement du 104intersection sur un torus. Le but de ce projet étant de résoudre une équation du 4ème degré.",
+      name: "PROJECTS.MATH.NAME",
+      content: "PROJECTS.MATH.CONTENT",
       techs: ["C", "Python"],
-      context: "Epitech 1ère année",
-      goal: "Faire travailler son algorithmie en C et en Python"
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.MATH.GOAL"
     },
     {
       name: "Matchstick",
-      content: "Réalisation d'un jeu de matchstick où un joueur et une IA s'affrontent. Le but du jeu étant de ne pas prendre la dernière allumette sur le plateau.",
+      content: "PROJECTS.MATCH.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Chercher la plus simple résolution. Suivre une norme d'affichage."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.MATCH.GOAL"
     },
     {
       name: "Lem-In",
-      content: "Réalisation d'un algorithme de résolution de labyrinthe composé de \"salles\" et de \"chemins\".\nLe but étant de fournir le meilleur chemin jusqu'à la sortie en un temps record.",
+      content: "PROJECTS.LEMIN.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Faire travailler mon algorithmie, et mes compétences en C. En particulier l'usage de listes chaînées."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.LEMIN.GOAL"
     },
     {
       name: "Dante",
-      content: "Réalisation d'un algorithme de génération de labyrinthes en 2D, ainsi que d'un solveur.",
+      content: "PROJECTS.DANTE.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Faire travailler mon algorithmie, et mes compétences en C."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.DANTE.GOAL"
     },
     {
       name: "Bistro-matic",
-      content: "Réalisation d'une calculatrice à nombres infinis.",
+      content: "PROJECTS.BISTRO.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Mettre en pratique toutes les compétences vues durant la piscine de C au sein d'un projet de groupe."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.BISTRO.GOAL"
     },
     {
-      name: "Piscine de C",
-      content: "2 Semaines intensives réservées à l'apprentissage du langage C et bash.",
+      name: "PROJECTS.PISCC.NAME",
+      content: "PROJECTS.PISCC.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Découverte et apprentissage accéléré du langage C"
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.PISCC.GOAL"
     },
     {
       name: "Tetris",
-      content: "Création du jeu Tetris grâce à la librairie NCurses.",
+      content: "PROJECTS.TETRIS.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Comprendre et utiliser la librairie Ncurses."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.TETRIS.GOAL"
     },
     {
       name: "Navy",
-      content: "Création d'une bataille navale. Chaque utilisateur doit utiliser un PID pour pouvoir communiquer.",
+      content: "PROJECTS.NAVY.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Comprendre les PID, et les utiliser grâce à des signaux. Communication entre processus."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.NAVY.GOAL"
     },
     {
       name: "Sokoban",
-      content: "Réalisation d'un jeu de type sokoban avec la librairie Ncurses.",
+      content: "PROJECTS.SOKOBAN.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Découvrir la libraire Ncurses, améliorer ses connaissances en langage C"
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.SOKOBAN.GOAL"
     },
     {
       name: "Minishell",
-      content: "Création d'un shell et ses commandes les plus basiques: ls, cat, redirection, pipes, semolicons, etc...",
+      content: "PROJECTS.MINISHELL.CONTENT",
       techs: ["C"],
-      context: "Epitech 1ère année",
-      goal: "Comprendre plus en avant comment fonctionne le Shell TCSH."
+      context: "PROJECTS.EPI1Y",
+      goal: "PROJECTS.MINISHELL.GOAL"
     }
   ];
 

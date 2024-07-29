@@ -1,9 +1,9 @@
 export type Content = {
-  title: String,
+  title: string,
   startDate: Date,
   endDate?: Date,
-  content?: String,
-  competencies?: String,
-  place?: String,
-  logoPath?: String
+  content?: string,
+  competencies?: string,
+  place?: string,
+  logoPath?: string
 }

@@ -9,6 +9,7 @@ import {
   featherChevronUp
 } from "@ng-icons/feather-icons";
 import { NgIconsModule } from "@ng-icons/core";
+import { TranslateModule } from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgIconsModule } from "@ng-icons/core";
       featherXCircle,
       featherHelpCircle,
       featherChevronUp
-    })
+    }),
+    TranslateModule
   ]
 })
 export class ProjectsModule {}

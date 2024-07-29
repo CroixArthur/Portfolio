@@ -3,7 +3,6 @@ import { HomeComponent } from "./home.component";
 import { HistoryListModule } from "../history-list/history-list.module";
 import { NgIconsModule } from "@ng-icons/core";
 import {
-  featherMapPin,
   featherMail,
   featherLinkedin,
   featherPhone
@@ -11,6 +10,7 @@ import {
 import { CommonModule } from "@angular/common";
 import { CompetenciesComponent } from "../competencies/competencies.component";
 import { RecommendationComponent } from "../recommendation/recommendation.component";
+import { TranslateModule } from "@ngx-translate/core";
 
 @NgModule({
   declarations: [HomeComponent],
@@ -21,11 +21,11 @@ import { RecommendationComponent } from "../recommendation/recommendation.compon
     CompetenciesComponent,
     RecommendationComponent,
     NgIconsModule.withIcons({
-      featherMapPin,
       featherMail,
       featherLinkedin,
       featherPhone
-    })
+    }),
+    TranslateModule
   ]
 })
 export class HomeModule {}

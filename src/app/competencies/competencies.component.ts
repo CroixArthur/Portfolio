@@ -1,14 +1,18 @@
 import { Component, Input } from '@angular/core';
 import { Competency } from '../models/competency.model';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'competencies',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    TranslateModule
+  ],
   template: `
-    <div class="flex">
-      <h3 class="text-end pr-4 border-r border-r-[gray] mr-4 sm:w-40 w-28">{{title}}</h3>
+    <div class="flex first:mb-8">
+      <h3 class="text-end pr-4 border-r border-r-[gray] mr-4 w-28">{{ title | translate }}</h3>
       <div class="flex flex-col flex-wrap h-full gap-2">
         <div
           *ngFor="let competency of competencies"
@@ -22,6 +26,6 @@ import { CommonModule } from '@angular/common';
   `
 })
 export class CompetenciesComponent {
-  @Input({ required: true }) title!: String;
+  @Input({ required: true }) title!: string;
   @Input() competencies: Competency[] = [];
 }

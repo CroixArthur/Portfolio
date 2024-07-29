@@ -1,15 +1,17 @@
 <nav class="w-full h-20 bg-gray-100 dark:bg-gray-800 dark:text-neutral-100 flex items-center fixed top-0 z-50">
-  <div class="flex-1"></div>
+  <div class="flex-1 group ml-8 w-auto max-w-min mt-2 relative">
+    <ng-content select="[language]"></ng-content>
+  </div>
   <div
     *ngIf="displayScrollUp() == true"
     (click)="scrollToTop()"
-    class="absolute left-0 lg:w-[10vw] w-[10vw] sm:text-sm text-xs md:text-base lg:text-base top-32 flex flex-col items-center hover:cursor-pointer"
+    class="absolute left-0 lg:w-[10vw] w-[10vw] sm:text-sm text-xs md:text-base lg:text-base top-48 flex flex-col items-center hover:cursor-pointer"
   >
     <ng-icon
       size="59"
       name="featherChevronUp"
       class="animate-bounce"></ng-icon>
-    <p class="text-center">Haut de page</p>
+    <p class="text-center">{{ 'TOTOP' | translate }}</p>
   </div>
   <ul class="flex flex-[5] justify-center sm:gap-16 gap-8">
     <li><a
@@ -20,9 +22,9 @@
     <li><a
       class="text-xl font-bold dark:hover:text-white hover:text-gray-600 growing-underline dark:before:bg-white before:bg-gray-600 text-gray-400"
       routerLinkActive="dark:text-green-dark text-green before:scale-x-[.7] dark:before:!bg-green-dark before:!bg-green"
-      routerLink="/projects">Projets</a></li>
+      routerLink="/projects">{{ 'PROJECTS.TITLE' | translate }}</a></li>
   </ul>
   <div class="flex-1 sm:mr-0 mr-4">
-    <ng-content></ng-content>
+    <ng-content select="[slider]"></ng-content>
   </div>
 </nav>

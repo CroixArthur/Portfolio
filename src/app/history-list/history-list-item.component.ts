@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { Content } from "../models/content.model";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
     selector: 'history-list-item',
@@ -16,25 +17,24 @@ import { Content } from "../models/content.model";
         </div>
         <div class="w-full">
           <div class="flex justify-between">
-            <h3 [class]="{
+            <h3 [ngClass]="{
                 '!text-green': isActual(),
                 'dark:!text-green-dark': isActual()
               }"
-              >{{content.title}}<span class=" font-normal text-base">{{isActual() ? " actuel" : ""}}</span></h3>
-            <img *ngIf="content.logoPath" [src]="content.logoPath" class="max-w-14 max-h-14 object-contain"/>
+              >{{ (content.title || '') | translate }}<span class="font-normal text-base ml-2" [ngClass]="{ 'hidden': !isActual() }">{{ "ACTUAL" | translate }}</span></h3>
           </div>
           <div class="flex gap-1 md:gap-4 md:flex-row flex-col text-gray-500 dark:text-gray-400">
             <div class="flex gap-2 items-center">
               <ng-icon name="featherClock" class="!overflow-visible"></ng-icon>
-              <p class="font-medium">{{getDates()}}</p>
+              <ng-container *ngIf="getDates() as dates"><p class="font-medium">{{ dates.key | translate: dates.params }}</p></ng-container>
             </div>
             <div class="flex gap-2 items-center">
               <ng-icon name="featherMapPin" class="!overflow-visible"></ng-icon>
               <p class="font-medium">{{content.place}}</p>
             </div>
           </div>
-          <p class="whitespace-pre-wrap">{{content.content}}</p>
-          <p *ngIf="content.competencies" class="mt-2"><span class="text-gray-500 dark:text-gray-400 font-bold">Compétences:</span> {{content.competencies}}</p>
+          <p class="whitespace-pre-wrap" [innerHTML]="(content.content ?? '') | translate"></p>
+          <p *ngIf="content.competencies" class="mt-2"><span class="text-gray-500 dark:text-gray-400 font-bold">{{ 'COMPETENCIES' | translate}}:</span> {{content.competencies}}</p>
         </div>
       </div>
     `
@@ -42,29 +42,40 @@ import { Content } from "../models/content.model";
 export class HistoryListItemComponent {
   @Input({ required: true }) content!: Content;
 
+  constructor(private translate: TranslateService) {}
+
   getDates() {
     const months = [
-      "Janvier",
-      "Février",
-      "Mars",
-      "Avril",
-      "Mai",
-      "Juin",
-      "Juillet",
-      "Août",
-      "Septembre",
-      "Octobre",
-      "Novembre",
-      "Décembre"
+      "DATE.JANUARY",
+      "DATE.FEBRUARY",
+      "DATE.MARCH",
+      "DATE.APRIL",
+      "DATE.MAY",
+      "DATE.JUNE",
+      "DATE.JULY",
+      "DATE.AUGUST",
+      "DATE.SEPTEMBER",
+      "DATE.OCTOBER",
+      "DATE.NOVEMBER",
+      "DATE.DECEMBER"
     ];
-    const startDate = months[this.content.startDate.getMonth()] + ' ' + this.content.startDate.getFullYear();
-    const endDate = this.content.endDate
-      ? months[this.content.endDate.getMonth()] + ' ' + this.content.endDate.getFullYear()
-      : null;
 
     return this.content.endDate
-      ? `De ${startDate} à ${endDate}`
-      : `Depuis ${startDate}`;
+      ? {
+        key: "DATE.FROMTO",
+        params: {
+          startMonth: this.translate.instant(months[this.content.startDate.getMonth()]),
+          startYear: this.content.startDate.getFullYear(),
+          endMonth: this.translate.instant(months[this.content.endDate.getMonth()]),
+          endYear: this.content.endDate.getFullYear()
+        }
+      } : {
+        key: "DATE.SINCE",
+        params: {
+          month: this.translate.instant(months[this.content.startDate.getMonth()]),
+          year: this.content.startDate.getFullYear()
+        }
+      };
   }
 
   isActual = () => !this.content.endDate;

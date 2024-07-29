@@ -4,9 +4,10 @@ import { Recommendation } from '../models/recommendation.model';
 import { provideIcons } from '@ng-icons/core';
 import { featherMapPin, featherMail, featherLinkedin, featherPhone, featherCreditCard } from "@ng-icons/feather-icons";
 import { Competency } from '../models/competency.model';
+import { Language } from '../models/language.model';
 
 type ListContent = {
-  title: String,
+  title: string,
   content: Content[]
 }
 
@@ -26,8 +27,8 @@ export class HomeComponent {
   compBack: Competency[];
   compDatabases: Competency[];
   compOthers: Competency[];
-  languages: String[];
-  compPro: String[];
+  languages: Language[];
+  compPro: string[];
 
   constructor() {
     this.formations = this.getFormations();
@@ -72,9 +73,11 @@ export class HomeComponent {
       { name: "Docker", percentage: 80 },
     ];
     this.languages = [
-      "Français (Natif)", "Anglais (C1)", "Espagnol (B2)"
+      { name: "FRENCH", level: "NATIVE" },
+      { name: "ENGLISH", level: "C1" },
+      { name: "SPANISH", level: "B2" },
     ];
-    this.compPro = ["Pédagogie", "Force de proposition", "Méthode Agile"];
+    this.compPro = ["PEDAGOGY", "PROACTIVE", "AGILEMETHOD", "CREATIVE"];
   }
 
   // TODO
@@ -84,34 +87,34 @@ export class HomeComponent {
   // Maquette
 
   getFormations = () : ListContent => { return {
-    title: "Mes Formations",
+    title: "HOME.FORMATIONS.TITLE",
     content: [
       {
-        title: "(Master) EPITECH Technology - Année 5",
-        content: "Consolidation des acquis des années précédentes. Découverte de nouvelles technologies, et finition du projet de fin d'études.\nCette année m'a également permis de développer mes compétences en pédagogie grâce à mon stage de fin d'études.",
+        title: "HOME.FORMATIONS.E5.TITLE",
+        content: "HOME.FORMATIONS.E5.CONTENT",
         startDate: new Date("09/01/2023"),
         competencies: "C, C++, C#, Javascript (VueJs, ReactJs, React Native), Python, Haskell, Java, Dart (Flutter), ASM, SQL, Docker, PHP, HTML, CSS, Gestion de projet",
         place: "Nantes, France",
       },
       {
-        title: "고려대학교 Korea University Sejong Campus",
-        content: "Echange universitaire dans le cadre de ma 4ème année d'études chez Epitech.\nCours d'IA (Réseaux neuronaux, algorithmes de Reinforcement Learning, Machine Learning), cours de Java, création de modules pour le système d'exploitation xv6.",
+        title: "HOME.FORMATIONS.KU.TITLE",
+        content: "HOME.FORMATIONS.KU.CONTENT",
         startDate: new Date("09/01/2022"),
         endDate: new Date("06/01/2023"),
         competencies: "Machine Learning, Java, C, Python",
         place: "Sejong, Corée du Sud",
       },
       {
-        title: "(Master) EPITECH Technology - Année 1, 2, 3",
-        content: "Apprentissage en programmation sur de l'algorithmie, de l'intelligence artificielle, de la cybersécurité, du réseau, du jeu vidéo.\nFormation sur la prise en charge de projets informatiques, et de projets de groupe.",
+        title: "HOME.FORMATIONS.E123.TITLE",
+        content: "HOME.FORMATIONS.E123.CONTENT",
         endDate: new Date("06/01/2022"),
         startDate: new Date("09/01/2019"),
         competencies: "C, C++, C#, Javascript (VueJs, ReactJs, React Native), Python, Haskell, Java, Dart (Flutter), ASM, SQL, Docker, PHP, HTML, CSS, Gestion de projet",
         place: "Nantes, France",
       },
       {
-        title: "Baccalauréat Scientifique Sciences de l'Ingénieur",
-        content: "Saint Aubin la Salle",
+        title: "HOME.FORMATIONS.HS.TITLE",
+        content: "HOME.FORMATIONS.HS.CONTENT",
         startDate: new Date("09/01/2016"),
         endDate: new Date("06/01/2019"),
         place: "Angers, France"
@@ -120,42 +123,42 @@ export class HomeComponent {
   }};
 
   getExperiences = () : ListContent => { return {
-    title: "Mes Expériences",
+    title: "HOME.EXPERIENCES.TITLE",
     content: [
       {
-        title: "EPITECH - Teaching & Coaching",
-        content: "Assistant pédagogique auprès des élèves des branches préMSC, MSC1 et MSC2 d'Epitech Nantes.\nMontée en compétences sur de nouvelles technologies pour répondre aux questions des étudiants.",
+        title: "HOME.EXPERIENCES.ETC.TITLE",
+        content: "HOME.EXPERIENCES.ETC.CONTENT",
         startDate: new Date("03/01/2024"),
         competencies: "Pédagogie, Angular, Rust, F#",
         place: "Nantes, France",
       },
       {
-        title: "DIVOLUCI - Développeur Mobile Full-Stack",
-        content: "Développement de l'application mobile pour les patients. Prise de rendez vous, communication avec un professionnel de santé, gestion d'utilisateurs multiples, communication avec une api.\nDéveloppement de l'API pour l'application mobile.\nOrganisation et architecture du projet.",
+        title: "HOME.EXPERIENCES.DDMFS.TITLE",
+        content: "HOME.EXPERIENCES.DDMFS.CONTENT",
         startDate: new Date("09/01/2023"),
         endDate: new Date("03/01/2024"),
         competencies: "PHP, MySQL, HTML5, Javascript, CSS, Symfony 5, VueJs, Docker, Dart (Flutter), Gestion de projet",
         place: "Nantes, France",
       },
       {
-        title: "DIVOLUCI - Développeur Web Full-Stack",
-        content: "Développement de nouvelles fonctionnalités et implémentation de connecteurs et composants de communication avec des systèmes tiers pour l'application web (DMP, INSi, ProSanté Connect, etc.)",
+        title: "HOME.EXPERIENCES.DDWFS.TITLE",
+        content: "HOME.EXPERIENCES.DDWFS.CONTENT",
         startDate: new Date("04/01/2022"),
         endDate: new Date("07/01/2022"),
         competencies: "PHP, MySQL, HTML5, Javascript, CSS, Symfony 5, VueJs, Docker",
         place: "Nantes, France",
       },
       {
-        title: "Code 42 - Développeur Web Full-Stack",
-        content: "Développement autour de l'ERP (Planificateur de ressources d'entreprise) open source DOLIBARR.\nDéveloppement de nouveaux modules pour l'ERP de plusieurs entreprises clientes.",
+        title: "HOME.EXPERIENCES.C42.TITLE",
+        content: "HOME.EXPERIENCES.C42.CONTENT",
         startDate: new Date("09/01/2020"),
         endDate: new Date("12/01/2020"),
         competencies: "PHP, HTML, CSS, SQL",
         place: "Nantes, France",
       },
       {
-        title: "Soluflam - Web Designer",
-        content: "Réalisation du site internet professionnel de l'entreprise sous Wix.\nSuivi d'un cahier des charges.\nCommunication perpétuelle avec le client.",
+        title: "HOME.EXPERIENCES.S.TITLE",
+        content: "HOME.EXPERIENCES.S.CONTENT",
         startDate: new Date("11/01/2018"),
         endDate: new Date("01/01/2019"),
         competencies: "UI, UX",

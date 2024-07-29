@@ -1,8 +1,29 @@
 <app-navbar>
-  <label id="switch" class="switch" name="slider" for="slider">
-    <input type="checkbox" [(ngModel)]="darkMode" (change)="onSwitchDark()" id="slider"/>
-    <span class="slider round"></span>
-  </label>
+  <!-- Language selector -->
+  <ng-container language>
+    <div class="flex gap-2 items-center p-3 mb-2 rounded-lg sm:w-44 w-24 group-hover:dark:bg-black/40 group-hover:bg-black/20 transition">
+      <img class="h-8 w-8" [src]="selectedLanguage().svgPath" />
+      <span class="sm:block hidden">{{ selectedLanguage().name }}</span>
+      <ng-icon size="30" name="featherChevronUp" class="group-hover:rotate-180 transition ml-auto"></ng-icon>
+    </div>
+    <ul class="group-hover:opacity-100 opacity-0 group-hover:pointer-events-auto pointer-events-none absolute p-1 rounded-lg sm:w-44 w-24 dark:bg-gray-700 bg-gray-200 transition">
+      <li
+        *ngFor="let language of languageOptions"
+        class="flex gap-2 items-center p-2 hover:bg-black/20 rounded-lg cursor-pointer sm:justify-normal justify-center"
+        [ngClass]="{
+          'hidden': language.name == selectedLanguage().name
+        }"
+        (click)="switchLanguage(language)"
+      ><img class="h-8 w-8" [src]="language.svgPath" /><span class="sm:block hidden">{{ language.name }}</span></li>
+    </ul>
+  </ng-container>
+  <!-- Light/Dark mode selector -->
+  <ng-container slider>
+    <label id="switch" class="switch" for="slider">
+      <input type="checkbox" [(ngModel)]="darkMode" (change)="onSwitchDark()" name="slider" id="slider"/>
+      <span class="slider round"></span>
+    </label>
+  </ng-container>
 </app-navbar>
 
 <div class="main main-container">

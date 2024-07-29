@@ -1,36 +1,28 @@
 <main class="main flex-col px-[10%] pt-24">
-  <div class="relative w-full">
+  <div class="relative self-start dark:bg-gray-700 bg-gray-200 p-1 transition-[height,width] duration-1000 flex rounded-full"
+    [ngClass]="{
+      'rounded-lg w-full [transition:height_500ms,width_500ms,border_radius_100ms_100ms]': isHelpSelected,
+      'w-[33px] [transition:height_1s,width_1s,border-radius_100ms_900ms]': !isHelpSelected
+    }"
+    [ngStyle]="getHelpContainerStyle()">
+    <ng-icon
+      size="25"
+      [name]="isHelpSelected ? 'featherXCircle' : 'featherHelpCircle'"
+      [ngClass]="{
+        'rotate-90': isHelpSelected,
+        'rotate-0': !isHelpSelected
+      }"
+      class="!overflow-visible cursor-pointer active:text-green-500 transition-all"
+      (click)="onToggleHelp()" [title]="'PROJECTS.MOREINFO' | translate">
+    </ng-icon>
     <p
       [ngClass]="{
         'opacity-100 visible transition-opacity': isHelpSelected,
         'opacity-0 invisible transition-none': !isHelpSelected
-      }" class="ml-[calc(25px+0.5rem)] delay-[800ms] p-2 h-auto absolute" id="pageDetails">J'ai pris parti de vous fournir une grande partie des projets sur lesquels j'ai pu travailler afin de vous faire part de mes <strong>expériences</strong> ainsi que de mon <strong>expertise</strong> en programmation et gestion de projet.<br/>
-      Mes projets de stage variant beaucoup, j'ai décidé de ne pas les référencer ici<br/>
-      J'ai appris en <strong>première année</strong> d'études à bien <strong>structurer</strong> mon code, à le <strong>documenter</strong> ainsi qu'à le <strong>tester</strong> sur l'une des technologies les plus élémentaires qu'est le langage C.<br/>
-      En <strong>seconde année</strong>, j'ai eu l'occasion de me concentrer sur les langages objets, et plus particulièrement le C++. Dans cet objectif, les projets visés étaient plus conséquents, et nécessitaient donc de plus grand groupes avec une bonne <strong>organisation</strong>.<br/>
-      La <strong>troisième année</strong> m'a permis de me <strong>diversifier</strong> dans mes compétences. Notamment dans le développement d'applications mobiles, dans la cybersécurité, ainsi que le DevOps.
+      }" class="absolute ml-[calc(25px+0.5rem)] w-[calc(80vw-25px-1.5rem)] p-2 delay-[800ms]" [innerHTML]="'PROJECTS.DESCRIPTION' | translate" id="help-text-description">
     </p>
-    <div [ngClass]="{
-      'rounded-lg w-full [transition:height_500ms,width_500ms,border_radius_100ms_100ms]': isHelpSelected,
-      '!rounded-full w-[33px] [transition:height_1s,width_1s,border-radius_100ms_900ms]': !isHelpSelected,
-      }"
-      class="rounded-full self-start dark:bg-gray-700 bg-gray-200 p-1 transition-[height,width] duration-1000"
-      [style]="getHelpContainerStyle()"
-      >
-      <div class="flex gap-2 w-full relative">
-        <ng-icon
-          size="25"
-          [name]="isHelpSelected ? 'featherXCircle' : 'featherHelpCircle'"
-          [ngClass]="{
-            'rotate-90': isHelpSelected,
-            'rotate-0': !isHelpSelected
-          }"
-          class="!overflow-visible cursor-pointer active:text-green-500 transition-all"
-          (click)="onToggleHelp()" title="Plus d'informations"></ng-icon>
-      </div>
-    </div>
   </div>
-  <h2 class="mb-6 mt-2 w-full">Veuillez sélectionner les boutons ci-dessous pour filter les projets par compétences</h2>
+  <h2 class="mb-6 mt-2 w-full">{{ 'PROJECTS.INFOSELECT' | translate }}</h2>
   <div class="flex items-start sm:flex-row flex-col-reverse">
     <div class="flex gap-4 flex-wrap mb-8">
       <button
@@ -40,7 +32,7 @@
           'bg-green-500 hover:!bg-green-500 text-white': but.selected
         }"
         class="text-nowrap py-1 px-2 rounded border border-green-500 hover:bg-green/40"
-      >{{but.name}}</button>
+      >{{ but.name | translate }}</button>
     </div>
     <button
       [ngClass]="{
@@ -49,7 +41,7 @@
       }"
       class="text-nowrap sm:ml-8 mb-6 sm:mb-0 p-2 border rounded"
       (click)="clearSelections()"
-    >Effacer la sélection</button>
+    >{{ 'PROJECTS.ERASESELECTION' | translate }}</button>
   </div>
   <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center">
     <project-card
@@ -59,7 +51,7 @@
     ></project-card>
   </div>
   <div *ngIf="selected.length === 0">
-    <h2 class="py-8" id="thirdyear">Epitech 3ème année</h2>
+    <h2 class="py-8" id="thirdyear">{{ 'PROJECTS.EPI3Y' | translate }}</h2>
     <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center">
       <project-card
         *ngFor="let project of getThirdYearProjects()"
@@ -67,7 +59,7 @@
         [selectedTechnos]="selected"
       ></project-card>
     </div>
-    <h2 class="py-8" id="secondyear">Epitech 2ème année</h2>
+    <h2 class="py-8" id="secondyear">{{ 'PROJECTS.EPI2Y' | translate }}</h2>
     <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center">
       <project-card
         *ngFor="let project of getSecondYearProjects()"
@@ -75,7 +67,7 @@
         [selectedTechnos]="selected"
       ></project-card>
     </div>
-    <h2 class="py-8" id="firstyear">Epitech 1ère année</h2>
+    <h2 class="py-8" id="firstyear">{{ 'PROJECTS.EPI1Y' | translate }}</h2>
     <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center">
       <project-card
         *ngFor="let project of getFirstYearProjects()"

@@ -5,23 +5,18 @@
     </div>
     <div class="sm:w-[30vw] w-[80vw] sm:mt-0 mt-8 sm:ml-8 md:ml-4 flex flex-col justify-center text-center">
       <h1>Arthur Croix</h1>
-      <h2>Développeur Full Stack</h2>
-      <p class="mx-16 mt-4">Ouverture d'esprit - Dynamique - Polyvalent - Curieux - Organisé - Assidu - Sens de l'écoute</p>
+      <h2>{{ 'HOME.TITLE' | translate}}</h2>
+      <p class="mx-16 mt-4">{{ 'HOME.QUALITIES' | translate}}</p>
     </div>
   </div>
   <div class="flex gap-8 mt-8 sm:flex-row flex-col">
     <div class="flex-1">
-      <h2 class="mb-2">Profil</h2>
-      <p class="text-lg">Je suis actuellement en recherche d'un <strong>CDD ou CDI</strong> pour Septembre 2024 dans le domaine du développement mobile, web ou desktop.<br/>
-        Le poste de chef de projet m'intéresse grandement, mais je reste ouvert à tout poste de développement informatique.<br/><br/>
-        Mes expériences professionnelles m'ont permis de m'épanouir dans l'environnement Web et Mobile en tant que Full Stack. J'en ait acquis par la même occasion des compétences en communication, management et organisation.<br/>
-        Pour des informations complémentaires, n'hésitez pas à me contacter par téléphone ou par mail.
-      </p>
+      <h2 class="mb-2">{{ 'HOME.PROFILE' | translate}}</h2>
+      <p class="text-lg" [innerHTML]="'HOME.INFO' | translate"></p>
     </div>
     <div class="flex-1">
       <h2 class="mb-2">Contact</h2>
       <ul class="flex flex-col gap-2 text-gray-500 dark:text-gray-400">
-        <li class="flex gap-2 items-center mr-auto group"><ng-icon name="featherMapPin" class="!overflow-visible group-hover:animate-bounce"></ng-icon><p>Nantes 44000, <strong>FRANCE</strong> (non fixe)</p></li>
         <li class="flex gap-2 items-center mr-auto selectable-with-child group">
           <div class="relative h-4 w-5 flex items-center">
             <svg class="absolute h-3 w-3 stroke-gray-500 dark:stroke-gray-400 hidden group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="1.9 7.9 4.2 8.2">
@@ -61,38 +56,44 @@
       [contents]="experiences.content"
     ></history-list>
   </div>
-  <h2 class="m-10">Compétences informatiques</h2>
-  <div class="flex sm:gap-16 gap-8 flex-wrap justify-center">
-    <competencies
-      title="Front End Web"
-      [competencies]="compFrontWeb"
-    ></competencies>
-    <competencies
-      title="Front End Mobile"
-      [competencies]="compFrontMobile"
-    ></competencies>
-    <competencies
-      title="Back End"
-      [competencies]="compBack"
-    ></competencies>
-    <competencies
-      title="Bases de données"
-      [competencies]="compDatabases"
-    ></competencies>
-    <competencies
-      title="Autres"
-      [competencies]="compOthers"
-    ></competencies>
+  <h2 class="m-10">{{ 'HOME.COMPUTERSKILLS' | translate }}</h2>
+  <div class="flex flex-wrap flex-row justify-center gap-8 sm:w-[120%]">
+    <div>
+      <competencies
+        title="Front End Web"
+        [competencies]="compFrontWeb"
+      ></competencies>
+      <competencies
+        title="Front End Mobile"
+        [competencies]="compFrontMobile"
+      ></competencies>
+    </div>
+    <div>
+      <competencies
+        title="Back End"
+        [competencies]="compBack"
+      ></competencies>
+      <competencies
+        title="DATABASES"
+        [competencies]="compDatabases"
+      ></competencies>
+    </div>
+    <div>
+      <competencies
+        title="OTHERS"
+        [competencies]="compOthers"
+      ></competencies>
+    </div>
   </div>
-  <h2 class="m-10">Langues parlées</h2>
+  <h2 class="m-10">{{ 'SPOKENLANGUAGES' | translate }}</h2>
   <ul>
-    <li class="flex gap-8"><h3 *ngFor="let language of languages">{{ language }}</h3></li>
+    <li class="flex gap-8"><h3 *ngFor="let language of languages">{{ (language.name | translate) + ' (' + (language.level | translate) + ')' }}</h3></li>
   </ul>
-  <h2 class="m-10">Autres compétences</h2>
+  <h2 class="m-10">{{ 'OTHERCOMPETENCIES' | translate }}</h2>
   <ul class="flex sm:gap-16 gap-8 flex-wrap justify-center">
-    <li><h3 *ngFor="let competency of compPro">{{ competency }}</h3></li>
+    <li><h3 *ngFor="let competency of compPro">{{ competency | translate }}</h3></li>
   </ul>
-  <h2 class="m-10">Recommandations</h2>
+  <h2 class="m-10">{{ 'RECOMMENDATIONS' | translate }}</h2>
   <div class="flex justify-center w-full">
     <recommendation
       *ngFor="let recommendation of recommendations"

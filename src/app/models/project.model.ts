@@ -1,7 +1,7 @@
 export type Project = {
-  name: String,
-  content: String,
-  techs: String[],
-  context?: String,
-  goal?: String
+  name: string,
+  content: string,
+  techs: string[],
+  context?: string,
+  goal?: string
 }

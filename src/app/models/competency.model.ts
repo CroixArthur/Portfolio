@@ -1,4 +1,4 @@
 export type Competency = {
-  name: String,
-  percentage: Number
+  name: string,
+  percentage: number
 }
