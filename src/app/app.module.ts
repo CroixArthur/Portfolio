@@ -11,7 +11,7 @@ import { featherChevronUp } from "@ng-icons/feather-icons";
 import { NgIconsModule } from "@ng-icons/core";
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './Portfolio/assets/i18n/', '.json');
 }
 
 @NgModule({
