@@ -114,7 +114,7 @@
       "CONTENT": "Projet de fin d'études de 3ème année chez Epitech.\nRéalisation d'un tableau de bord permettant de configurer des actions pour ses comptes Spotify, Paypal et Github.",
       "GOAL": "Réussir à mettre en place une connexion et des actions envers un service tiers. Proposer aux utilisateurs du multi-plateforme (web et mobile). Sécuriser les accès aux comptes et fonctionnalités de l'application. Gérer un groupe de projet"
     },
-    "REDITECH": {
+    "REDDITECH": {
       "CONTENT": "Réalisation d'un projet de réseau social en réutilisant l'API de Reddit.",
       "GOAL": "Réutiliser l'API d'un service existant. Comprendre les protocoles d'authentification (OAuth2). Soigner son UI/UX"
     },
