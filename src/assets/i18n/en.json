@@ -226,7 +226,7 @@
     },
     "MATH": {
       "NAME": "Applied mathematics",
-      "CONTENT": "Multitude of appliend mathematics projects using C language and Python.\n- 101pong: Calculation of the trajectory of a ball.\n- 102architect: Calculation of a point's coordinates following multiple transformations in a space.\n- 103cipher: Encryption/Decryption of messages thanks to a matrix key.\n- 104intersation: Calculation of the intersations between a light ray and a 3D object in a space.\n- 105torus: Extension of the 104intersection on a torus. The goal aims to solve a 4th degree equation.",
+      "CONTENT": "Multitude of applied mathematics projects using C language and Python.\n- 101pong: Calculation of the trajectory of a ball.\n- 102architect: Calculation of a point's coordinates following multiple transformations in a space.\n- 103cipher: Encryption/Decryption of messages thanks to a matrix key.\n- 104intersection: Calculation of the intersations between a light ray and a 3D object in a space.\n- 105torus: Extension of the 104intersection on a torus. The goal aims to solve a 4th degree equation.",
       "GOAL": "Working on implementing algorithms in C and Python"
     },
     "MATCH": {
