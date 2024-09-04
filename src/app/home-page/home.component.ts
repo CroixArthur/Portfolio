@@ -51,7 +51,8 @@ export class HomeComponent {
       { name: "PHP", percentage: 95 },
       { name: "NodeJS", percentage: 80 },
       { name: "NestJS", percentage: 80 },
-      { name: "C#", percentage: 80 }
+      { name: "C#", percentage: 80 },
+      { name: "Spring Boot", percentage: 50 }
     ];
     this.compDatabases = [
       { name: "SQL", percentage: 90 },
