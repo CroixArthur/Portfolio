@@ -72,6 +72,7 @@ export class HomeComponent {
       { name: "Unity", percentage: 50 },
       { name: "Unreal Engine", percentage: 50 },
       { name: "Docker", percentage: 80 },
+      { name: "AWS", percentage: 50 }
     ];
     this.languages = [
       { name: "FRENCH", level: "NATIVE" },
